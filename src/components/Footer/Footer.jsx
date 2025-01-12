@@ -2,24 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
-  const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/maybeizen",
-      icon: "fa-brands fa-github",
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/maybeizen",
-      icon: "fa-brands fa-linkedin",
-    },
-    {
-      name: "Email",
-      url: "mailto:contact@maybeizen.com",
-      icon: "fa-solid fa-envelope",
-    },
-  ];
-
   return (
     <footer className="bg-zinc-950 py-12">
       <div className="container mx-auto px-4 text-center">

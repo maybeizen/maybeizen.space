@@ -89,7 +89,7 @@ const Hero = () => {
               tracking-wider 
               uppercase"
             >
-              View Projects
+              My Projects
             </a>
             <a
               href="https://github.com/maybeizen"
@@ -106,7 +106,7 @@ const Hero = () => {
               tracking-wider 
               uppercase"
             >
-              GitHub Profile
+              GitHub
             </a>
           </motion.div>
         </div>
