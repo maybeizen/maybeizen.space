@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- metadata -->
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/src/assets/images/favicon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- primary metadata -->
     <title>maybeizen - Full Stack Developer & Creative Technologist</title>
     <meta
       name="title"
@@ -14,7 +19,15 @@
       name="description"
       content="Crafting innovative software solutions at the intersection of creativity and technology. Explore my portfolio of web development, backend systems, and cutting-edge projects."
     />
+    <link rel="canonical" href="https://maybeizen.space" />
+    <meta name="author" content="maybeizen" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="full stack developer, web development, react, node.js, javascript, typescript, portfolio, maybeizen, frontend developer, backend developer, UI/UX, creative technologist"
+    />
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://maybeizen.space/" />
     <meta
@@ -25,9 +38,12 @@
       property="og:description"
       content="Crafting innovative software solutions at the intersection of creativity and technology. Explore my portfolio of web development, backend systems, and cutting-edge projects."
     />
-    <meta property="og:image" content="/src/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="maybeizen" />
 
-    <meta property="twitter:card" content="summary_large_image" />
+    <!-- Twitter -->
     <meta property="twitter:url" content="https://maybeizen.space/" />
     <meta
       property="twitter:title"
@@ -37,32 +53,52 @@
       property="twitter:description"
       content="Crafting innovative software solutions at the intersection of creativity and technology. Explore my portfolio of web development, backend systems, and cutting-edge projects."
     />
-    <meta
-      property="twitter:image"
-      content="/src/assets/images/twitter-image.png"
-    />
+    <meta property="twitter:creator" content="@maybeizen" />
 
-    <link rel="icon" type="image/png" href="/src/assets/images/favicon.png" />
+    <!-- preload critical assets -->
+    <link rel="preload" href="/src/assets/images/zerotwo.jpg" as="image" />
     <link
-      rel="apple-touch-icon"
-      href="/src/assets/images/apple-touch-icon.png"
+      rel="preload"
+      href="/src/assets/fonts/inter-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- seo -->
-    <meta
-      name="keywords"
-      content="full stack developer, web development, react, node.js, javascript, portfolio, maybeizen"
-    />
-    <meta name="author" content="maybeizen" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- preload -->
-    <link rel="preload" href="/src/assets/images/hiro.jpg" as="image" />
-
-    <link rel="canonical" href="https://maybeizen.space" />
+    <!-- structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "maybeizen",
+        "url": "https://maybeizen.space",
+        "image": "https://maybeizen.space/zerotwo.jpg",
+        "sameAs": [
+          "https://github.com/maybeizen",
+          "https://twitter.com/maybeizen"
+        ],
+        "jobTitle": "Full Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Independent"
+        },
+        "description": "Full stack developer passionate about creating elegant, functional solutions to complex problems."
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif">
+        <h1>JavaScript Required</h1>
+        <p>
+          This website requires JavaScript to function properly. Please enable
+          JavaScript in your browser settings.
+        </p>
+      </div>
+    </noscript>
   </body>
 </html>
