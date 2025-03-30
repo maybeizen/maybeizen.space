@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Home/Hero";
 import About from "../components/Home/About";
+import Timeline from "../components/Home/Timeline";
 import Skills from "../components/Home/Skills";
 import Projects from "../components/Home/Projects";
 import MouseEffect from "../components/common/MouseEffect";
@@ -13,6 +14,7 @@ const Home = () => {
       <div className="relative z-10">
         <Hero />
         <About />
+        <Timeline />
         <Skills />
         <Projects />
         <Footer />
