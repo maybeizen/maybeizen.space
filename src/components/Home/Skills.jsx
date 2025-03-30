@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import bootstrap from "../../assets/images/code/bootstrap.svg";
-import golang from "../../assets/images/code/golang.svg";
-import java from "../../assets/images/code/gradle.svg";
-import html from "../../assets/images/code/html.svg";
-import javascript from "../../assets/images/code/javascript.svg";
-import lua from "../../assets/images/code/lua.svg";
-import mysql from "../../assets/images/code/mysql.svg";
-import nextjs from "../../assets/images/code/nextjs.svg";
-import nodejs from "../../assets/images/code/nodejs.svg";
-import python from "../../assets/images/code/python.svg";
-import react from "../../assets/images/code/react.svg";
-import tailwindcss from "../../assets/images/code/tailwindcss.svg";
-import typescript from "../../assets/images/code/typescript.svg";
+import bootstrap from "/images/code/bootstrap.svg";
+import golang from "/images/code/golang.svg";
+import java from "/images/code/gradle.svg";
+import html from "/images/code/html.svg";
+import javascript from "/images/code/javascript.svg";
+import lua from "/images/code/lua.svg";
+import mysql from "/images/code/mysql.svg";
+import nextjs from "/images/code/nextjs.svg";
+import nodejs from "/images/code/nodejs.svg";
+import python from "/images/code/python.svg";
+import react from "/images/code/react.svg";
+import tailwindcss from "/images/code/tailwindcss.svg";
+import typescript from "/images/code/typescript.svg";
 
 const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);

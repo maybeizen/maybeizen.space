@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import profilePic from "../../assets/images/zerotwo.jpg";
+import profilePic from "/images/zerotwo.jpg";
 
 const Hero = () => {
   return (
@@ -53,6 +53,8 @@ const Hero = () => {
                   "UI/UX ENTHUSIAST",
                   2000,
                   "PROBLEM SOLVER",
+                  2000,
+                  "ANIME LOVER",
                   2000,
                 ]}
                 wrapper="span"
