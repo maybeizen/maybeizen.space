@@ -5,12 +5,10 @@ import About from "../components/Home/About";
 import Timeline from "../components/Home/Timeline";
 import Skills from "../components/Home/Skills";
 import Projects from "../components/Home/Projects";
-import MouseEffect from "../components/common/MouseEffect";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
-      <MouseEffect />
       <div className="relative z-10">
         <Hero />
         <About />

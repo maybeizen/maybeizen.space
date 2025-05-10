@@ -3,219 +3,116 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="bg-black py-32">
-      <div className="container mx-auto px-4 pb-4 relative">
+    <section id="about" className="bg-black py-28 text-white px-4">
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-semibold tracking-tight"
+        >
+          About Me
+        </motion.h2>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="h-[2px] bg-blue-500 mx-auto mt-4 mb-12"
+        />
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          transition={{ duration: 0.6 }}
+          className="space-y-6 text-white/80 text-base leading-relaxed max-w-3xl mx-auto"
         >
-          <div className="absolute top-0 right-0 w-1/3 h-1/3 border-r-2 border-t-2 border-white/10"></div>
-          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 border-l-2 border-b-2 border-white/10"></div>
+          <p>
+            Hey, I'm Izen — a full-stack developer and anime lover. I find that
+            the emotional depth and creativity in anime directly inspire the way
+            I solve problems and build software.
+          </p>
+          <p>
+            Every project I tackle is like crafting a new world, much like the
+            ones in my favorite shows. I thrive on learning and pushing my
+            skills with tech that empowers creativity and storytelling.
+          </p>
         </motion.div>
 
-        <div className="text-center mb-16 relative">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-5xl font-bold text-white tracking-tight"
-          >
-            ABOUT ME
-          </motion.h2>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "120px" }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="h-[2px] bg-white mx-auto mt-6"
-          ></motion.div>
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((card, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="bg-white/5 border border-white/10 p-6 rounded-xl text-left hover:border-blue-500 duration-250 transition-all"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded">
+                  <i className={`text-white text-lg ${card.icon}`}></i>
+                </div>
+                <h4 className="text-white text-lg font-medium">{card.title}</h4>
+              </div>
+              <p className="text-white/70 text-sm mb-4">{card.description}</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {card.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="space-y-6 text-white/70 mb-12">
-            <h3 className="text-2xl font-medium text-white mb-5 tracking-wide text-center">
-              Developer & Anime Enthusiast
-            </h3>
-
-            <p className="text-lg leading-relaxed">
-              Hi, I'm Izen. My passion for coding is matched only by my love for
-              anime and Japanese culture. I find that the creativity and
-              storytelling in anime often inspire my approach to problem-solving
-              in development.
-            </p>
-
-            <p className="text-lg leading-relaxed">
-              What excites me about coding is the endless potential to create
-              and innovate. Each project is a new world to build, much like the
-              diverse universes found in my favorite anime series. I'm
-              constantly pushing my boundaries, learning new technologies and
-              techniques to bring my ideas to life.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="bg-gradient-to-br from-blue-800/20 to-blue-600/5 border border-white/10 p-6 relative group transition-all duration-300 hover:border-white/20">
-              <div className="flex flex-col items-center gap-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5">
-                  <i className="fa-solid fa-code text-white text-xl"></i>
-                </div>
-                <h4 className="text-lg font-medium text-white">
-                  Coding Journey
-                </h4>
-              </div>
-              <p className="text-center text-white/70 mb-4">
-                Turning coffee into code since 2022
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-auto pt-3 border-t border-white/10">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-brands fa-js mr-2 text-yellow-400/80"></i>
-                  JavaScript
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-brands fa-golang mr-2 text-blue-400/80"></i>
-                  Go
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-800/20 to-pink-600/5 border border-white/10 p-6 relative group transition-all duration-300 hover:border-white/20">
-              <div className="flex flex-col items-center gap-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5">
-                  <i className="fa-solid fa-tv text-white text-xl"></i>
-                </div>
-                <h4 className="text-lg font-medium text-white">
-                  Anime Passion
-                </h4>
-              </div>
-              <p className="text-center text-white/70 mb-4">
-                Anime marathon enthusiast and manga collector
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-auto pt-3 border-t border-white/10">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-robot mr-2 text-pink-400/80"></i>
-                  DarliFra
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-user-graduate mr-2 text-orange-400/80"></i>
-                  Horimiya
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-skull mr-2 text-orange-400/80"></i>
-                  Eighty-Six
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-800/20 to-purple-600/5 border border-white/10 p-6 relative group transition-all duration-300 hover:border-white/20">
-              <div className="flex flex-col items-center gap-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5">
-                  <i className="fa-solid fa-laptop-code text-white text-xl"></i>
-                </div>
-                <h4 className="text-lg font-medium text-white">
-                  Creative Projects
-                </h4>
-              </div>
-              <p className="text-center text-white/70 mb-4">
-                Building projects inspired by my favorite series
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-auto pt-3 border-t border-white/10">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-code mr-2 text-indigo-400/80"></i>VS
-                  Code
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-brands fa-node-js mr-2 text-green-400/80"></i>
-                  Node.js
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-brands fa-github mr-2 text-white"></i>
-                  GitHub
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-800/20 to-green-600/5 border border-white/10 p-6 relative group transition-all duration-300 hover:border-white/20">
-              <div className="flex flex-col items-center gap-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5">
-                  <i className="fa-solid fa-gamepad text-white text-xl"></i>
-                </div>
-                <h4 className="text-lg font-medium text-white">Gaming</h4>
-              </div>
-              <p className="text-center text-white/70 mb-4">
-                Casual gamer and Minecraft modder
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-auto pt-3 border-t border-white/10">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-cube mr-2 text-green-400/80"></i>
-                  Minecraft
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-gun mr-2 text-red-400/80"></i>
-                  Call of Duty
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-red-800/20 to-red-600/5 border border-white/10 p-6 relative group transition-all duration-300 hover:border-white/20">
-              <div className="flex flex-col items-center gap-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5">
-                  <i className="fa-solid fa-music text-white text-xl"></i>
-                </div>
-                <h4 className="text-lg font-medium text-white">Music</h4>
-              </div>
-              <p className="text-center text-white/70 mb-4">
-                Always coding with music to set the mood
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-auto pt-3 border-t border-white/10">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-drum mr-2 text-red-400/80"></i>
-                  Linkin Park
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-guitar-electric mr-2 text-red-400/80"></i>
-                  Skillet
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-pepper-hot mr-2 text-red-400/80"></i>
-                  Red Hot Chili Peppers
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-amber-800/20 to-amber-600/5 border border-white/10 p-6 relative group transition-all duration-300 hover:border-white/20">
-              <div className="flex flex-col items-center gap-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5">
-                  <i className="fa-solid fa-graduation-cap text-white text-xl"></i>
-                </div>
-                <h4 className="text-lg font-medium text-white">
-                  Always Learning
-                </h4>
-              </div>
-              <p className="text-center text-white/70 mb-4">
-                Constantly expanding my knowledge and skills
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-auto pt-3 border-t border-white/10">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-book-open mr-2 text-amber-400/80"></i>
-                  Tutorials
-                </span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 text-sm">
-                  <i className="fa-solid fa-code-branch mr-2 text-amber-400/80"></i>
-                  Open Source
-                </span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
 };
+
+const cards = [
+  {
+    icon: "fa-solid fa-code",
+    title: "Coding Journey",
+    description:
+      "Started turning ideas into code in 2022 — and haven’t stopped since.",
+    tags: ["JavaScript", "Go"],
+  },
+  {
+    icon: "fa-solid fa-tv",
+    title: "Anime Fan",
+    description: "Inspired by stories like Darling in the Franxx and Horimiya.",
+    tags: ["DarliFra", "Horimiya", "Eighty-Six"],
+  },
+  {
+    icon: "fa-solid fa-laptop-code",
+    title: "Creative Dev",
+    description:
+      "Designing projects based on the anime I love and ideas that spark joy.",
+    tags: ["VS Code", "Node.js", "GitHub"],
+  },
+  {
+    icon: "fa-solid fa-gamepad",
+    title: "Gamer Life",
+    description:
+      "From building modpacks in Minecraft to sniping in Call of Duty.",
+    tags: ["Minecraft", "Call of Duty"],
+  },
+  {
+    icon: "fa-solid fa-music",
+    title: "Music & Code",
+    description: "Coding to a soundtrack — always. It fuels the creative flow.",
+    tags: ["Linkin Park", "Skillet", "RHCP"],
+  },
+  {
+    icon: "fa-solid fa-graduation-cap",
+    title: "Always Learning",
+    description:
+      "Exploring new tools, open source, and ways to grow every day.",
+    tags: ["Tutorials", "Open Source"],
+  },
+];
 
 export default About;

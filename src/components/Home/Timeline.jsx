@@ -2,128 +2,119 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+const timelineEvents = [
+  {
+    year: "2022",
+    title: "Discovered Programming",
+    description:
+      "Started learning HTML and CSS, building my first static pages.",
+    icon: "fa-solid fa-code",
+  },
+  {
+    year: "2022",
+    title: "JavaScript & React",
+    description:
+      "Built interactive UIs using React. Learned the fundamentals of frontend development.",
+    icon: "fa-brands fa-js",
+  },
+  {
+    year: "2023",
+    title: "Backend Exploration",
+    description:
+      "Dove into Node.js, MySQL, and APIs. Built bots and backend services.",
+    icon: "fa-solid fa-server",
+  },
+  {
+    year: "2023",
+    title: "Language Expansion",
+    description:
+      "Explored Python, Java, and Go for different types of projects.",
+    icon: "fa-solid fa-terminal",
+  },
+  {
+    year: "2024",
+    title: "Major Project: PteroLink",
+    description:
+      "Started developing PteroLink. Learned TypeScript and deeper architectural patterns.",
+    icon: "fa-solid fa-rocket",
+  },
+  {
+    year: "2025",
+    title: "Portfolio Launch",
+    description:
+      "Created a personal brand and launched my developer portfolio.",
+    icon: "fa-solid fa-briefcase",
+  },
+];
+
 const Timeline = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const timelineEvents = [
-    {
-      year: "2022",
-      title: "Discovered Programming",
-      description:
-        "Started my journey with HTML and CSS, building simple web pages.",
-      icon: "fa-solid fa-code",
-    },
-    {
-      year: "2022",
-      title: "Learned JavaScript",
-      description:
-        "Quickly expanded my skills into JavaScript and began creating simple React sites.",
-      icon: "fa-brands fa-js",
-    },
-
-    {
-      year: "2023",
-      title: "Expanded Backend Skills",
-      description:
-        "Mastered Node.js and MySQL. Starting to build custom Discord bots.",
-      icon: "fa-solid fa-server",
-    },
-    {
-      year: "2023",
-      title: "Other Languages",
-      description:
-        "I started to learn other languages like Python, Java, and Go to work on other projects.",
-      icon: "fa-solid fa-code",
-    },
-    {
-      year: "2024",
-      title: "First Major Project",
-      description:
-        "Began working on my first major project, PteroLink. Learned TypeScript.",
-      icon: "fa-solid fa-rocket",
-    },
-    {
-      year: "2025",
-      title: "Portfolio Launch",
-      description:
-        "Created my personal brand and portfolio website showcasing my projects and skills.",
-      icon: "fa-solid fa-briefcase",
-    },
-  ];
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="timeline" className="bg-black py-32">
-      <div className="container mx-auto px-4 relative">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 border-r-2 border-t-2 border-white/10"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 border-l-2 border-b-2 border-white/10"></div>
+    <section id="timeline" className="bg-black py-24 px-4">
+      <div className="max-w-4xl mx-auto text-white">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-semibold text-center tracking-tight mb-4"
+        >
+          My Journey
+        </motion.h2>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "120px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="h-[2px] bg-blue-500 mx-auto mb-12"
+        />
 
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold text-white tracking-tight">
-            MY JOURNEY
-          </h2>
-          <div className="h-[2px] bg-white w-[120px] mx-auto mt-6"></div>
-        </div>
-
-        <div ref={ref} className="max-w-4xl mx-auto relative">
-          {/* Timeline vertical line */}
-          <div className="absolute left-0 md:left-[100px] top-0 bottom-0 w-[2px] bg-white/10"></div>
-
+        <div
+          ref={ref}
+          className="relative border-l border-white/10 pl-6 space-y-16"
+        >
           {timelineEvents.map((event, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="mb-24 last:mb-0 pl-8 md:pl-[160px] relative"
+              className="relative pl-6"
             >
-              {/* Year marker */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 md:left-[100px] transform -translate-x-1/2 bg-black w-14 h-14 rounded-full border-2 border-white/20 flex items-center justify-center z-10">
-                <span className="text-white/90 text-base font-medium">
-                  {event.year}
-                </span>
-              </div>
-
-              {/* Content box */}
-              <div className="bg-black border border-white/10 p-6 md:p-8 relative">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-white/5 flex items-center justify-center border border-white/10">
-                    <i className={`${event.icon} text-white text-xl`}></i>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-10 h-10 flex items-center justify-center bg-blue-500 rounded text-black">
+                    <i className={`${event.icon} text-lg`}></i>
                   </div>
-                  <h3 className="text-xl font-medium text-white">
-                    {event.title}
-                  </h3>
+                  <span className="text-sm text-blue-400 font-medium">
+                    {event.year}
+                  </span>
                 </div>
-                <p className="text-white/70 leading-relaxed">
+                <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">
                   {event.description}
                 </p>
-
-                {/* Arrow connector */}
-                <div className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-6 h-6 transform rotate-45 border-l border-b border-white/10 bg-black"></div>
               </div>
             </motion.div>
           ))}
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.5,
-              delay: timelineEvents.length * 0.2 + 0.2,
-            }}
-            className="mt-20 text-center"
-          >
-            <a
-              href="#projects"
-              className="border border-white/20 px-8 py-3 text-white/80 hover:text-white hover:border-white/40 transition-all duration-300 inline-flex items-center gap-2"
-            >
-              <span>See my work</span>
-              <i className="fa-solid fa-arrow-right"></i>
-            </a>
-          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.5,
+            delay: timelineEvents.length * 0.2 + 0.3,
+          }}
+          className="mt-20 text-center"
+        >
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 rounded-sm px-6 py-2 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-black transition-all"
+          >
+            <span>See My Work</span>
+            <i className="fa-solid fa-arrow-right"></i>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
