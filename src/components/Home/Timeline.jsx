@@ -4,46 +4,53 @@ import { useInView } from "react-intersection-observer";
 
 const timelineEvents = [
   {
-    year: "2022",
-    title: "Discovered Programming",
+    year: "Late 2022",
+    title: "First Steps into Programming",
     description:
-      "Started learning HTML and CSS, building my first static pages.",
+      "Discovered web development through HTML and CSS. Built my first static websites and fell in love with code.",
     icon: "fa-solid fa-code",
   },
   {
-    year: "2022",
-    title: "JavaScript & React",
+    year: "Early 2023",
+    title: "Unlocking JavaScript & React",
     description:
-      "Built interactive UIs using React. Learned the fundamentals of frontend development.",
+      "Learned JavaScript and dove into React. Built interactive UIs and grasped core frontend concepts.",
     icon: "fa-brands fa-js",
   },
   {
-    year: "2023",
-    title: "Backend Exploration",
+    year: "Mid 2023",
+    title: "Backend Awakening",
     description:
-      "Dove into Node.js, MySQL, and APIs. Built bots and backend services.",
+      "Explored Node.js and MongoDB. Built Discord bots and backend APIs, learning how servers work.",
     icon: "fa-solid fa-server",
   },
   {
-    year: "2023",
-    title: "Language Expansion",
+    year: "Late 2023",
+    title: "Full-Stack Realization",
     description:
-      "Explored Python, Java, and Go for different types of projects.",
-    icon: "fa-solid fa-terminal",
+      "Started integrating frontend and backend skills. Built full-stack apps and grew confident as a developer.",
+    icon: "fa-solid fa-layer-group",
   },
   {
     year: "2024",
-    title: "Major Project: PteroLink",
+    title: "Type Safety & New Languages",
     description:
-      "Started developing PteroLink. Learned TypeScript and deeper architectural patterns.",
-    icon: "fa-solid fa-rocket",
+      "Learned TypeScript, Python, and Lua. Embraced typed patterns and started thinking like a systems architect.",
+    icon: "fa-solid fa-shield-halved",
   },
   {
-    year: "2025",
-    title: "Portfolio Launch",
+    year: "Early 2025",
+    title: "Personal Brand & Portfolio",
     description:
-      "Created a personal brand and launched my developer portfolio.",
+      "Launched my developer portfolio to showcase projects, write dev blogs, and define my online presence.",
     icon: "fa-solid fa-briefcase",
+  },
+  {
+    year: "Present",
+    title: "Systems Programming & Beyond",
+    description:
+      "Diving into Go, Rust, and C. Exploring low-level systems, performance, and memory management.",
+    icon: "fa-solid fa-microchip",
   },
 ];
 

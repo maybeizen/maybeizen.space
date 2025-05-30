@@ -78,40 +78,40 @@ const cards = [
     title: "Coding Journey",
     description:
       "Started turning ideas into code in 2022 — and haven’t stopped since.",
-    tags: ["JavaScript", "Go"],
+    tags: ["Typescript", "GoLang"],
   },
   {
     icon: "fa-solid fa-tv",
     title: "Anime Fan",
     description: "Inspired by stories like Darling in the Franxx and Horimiya.",
-    tags: ["DarliFra", "Horimiya", "Eighty-Six"],
+    tags: ["DarliFra", "Horimiya", "Tsukigakirei"],
   },
   {
     icon: "fa-solid fa-laptop-code",
     title: "Creative Dev",
     description:
       "Designing projects based on the anime I love and ideas that spark joy.",
-    tags: ["VS Code", "Node.js", "GitHub"],
+    tags: ["VS Code", "GitHub", "Node.js"],
   },
   {
     icon: "fa-solid fa-gamepad",
     title: "Gamer Life",
     description:
       "From building modpacks in Minecraft to sniping in Call of Duty.",
-    tags: ["Minecraft", "Call of Duty"],
+    tags: ["Minecraft", "Call of Duty", "The Finals"],
   },
   {
     icon: "fa-solid fa-music",
     title: "Music & Code",
     description: "Coding to a soundtrack — always. It fuels the creative flow.",
-    tags: ["Linkin Park", "Skillet", "RHCP"],
+    tags: ["Linkin Park", "Slipknot", "Skillet"],
   },
   {
     icon: "fa-solid fa-graduation-cap",
     title: "Always Learning",
     description:
       "Exploring new tools, open source, and ways to grow every day.",
-    tags: ["Tutorials", "Open Source"],
+    tags: ["Tutorials", "Open Source", "AI"],
   },
 ];
 
