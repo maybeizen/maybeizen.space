@@ -30,6 +30,13 @@ const Projects = () => {
       category: "Frontend",
     },
     {
+      name: "Voxyn Labs",
+      description: "Landing page and info site for Voxyn Labs.",
+      technologies: ["Svelte", "Tailwind CSS", "TypeScript"],
+      githubLink: "https://github.com/VoxynLabs/voxynlabs.github.io",
+      category: "Frontend",
+    },
+    {
       name: "Portfolio",
       description: "This very portfolio site, built with React and Tailwind.",
       technologies: ["React.js", "Tailwind CSS", "Vite"],
