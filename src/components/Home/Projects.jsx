@@ -87,7 +87,7 @@ const Projects = () => {
         >
           Projects
         </motion.h2>
-        <div className="h-[2px] bg-blue-500 w-24 mx-auto mb-12"></div>
+        <div className="h-[2px] bg-violet-500 w-24 mx-auto mb-12"></div>
 
         <div className="flex justify-center gap-4 mb-12">
           {categories.map((category) => (
@@ -96,7 +96,7 @@ const Projects = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-5 py-2 text-sm border rounded-sm transition-colors ${
                 activeFilter === category
-                  ? "bg-blue-500 text-black"
+                  ? "bg-violet-500 text-black"
                   : "border-white/20 text-white/70 hover:text-white"
               }`}
             >
@@ -114,7 +114,7 @@ const Projects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 30 }}
                 transition={{ delay: i * 0.1 }}
-                className="border border-white/10 bg-white/5 p-6 rounded-md hover:border-blue-500 transition cursor-pointer"
+                className="border border-white/10 bg-white/5 p-6 rounded-md hover:border-violet-500 transition cursor-pointer"
                 onClick={() => openLink(project.githubLink)}
               >
                 <h3 className="text-xl font-medium mb-2">{project.name}</h3>
@@ -160,7 +160,7 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="border border-white/10 bg-white/5 p-6 rounded-md hover:border-blue-500 transition cursor-pointer"
+                  className="border border-white/10 bg-white/5 p-6 rounded-md hover:border-violet-500 transition cursor-pointer"
                   onClick={() =>
                     openLink(project.githubLink || project.modrinthLink)
                   }

@@ -25,6 +25,17 @@ const skillsData = [
     description: "High-level language for creating dynamic web content.",
   },
   {
+    name: "Laravel",
+    icon: "/images/code/laravel.svg",
+    description: "PHP framework for building web applications.",
+  },
+  {
+    name: "Svelte & SvelteKit",
+    icon: "/images/code/svelte.svg",
+    description:
+      "Svelte is a modern frontend framework for building user interfaces.",
+  },
+  {
     name: "Lua",
     icon: "/images/code/lua.svg",
     description: "Lightweight scripting language commonly used in games.",

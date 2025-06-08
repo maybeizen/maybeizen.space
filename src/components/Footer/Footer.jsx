@@ -22,21 +22,21 @@ const Footer = () => {
               href="https://github.com/maybeizen"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/50 hover:text-blue-400 transition"
+              className="text-white/50 hover:text-violet-400 transition"
               aria-label="GitHub"
             >
               <i className="fa-brands fa-github text-xl"></i>
             </a>
             <a
               href="#"
-              className="text-white/50 hover:text-blue-400 transition"
+              className="text-white/50 hover:text-violet-400 transition"
               aria-label="Twitter"
             >
               <i className="fa-brands fa-twitter text-xl"></i>
             </a>
             <a
               href="mailto:contact@maybeizen.space"
-              className="text-white/50 hover:text-blue-400 transition"
+              className="text-white/50 hover:text-violet-400 transition"
               aria-label="Email"
             >
               <i className="fa-solid fa-envelope text-xl"></i>
@@ -75,7 +75,7 @@ const Footer = () => {
           </p>
           <a
             href="mailto:contact@maybeizen.space"
-            className="inline-block text-sm text-blue-400 hover:text-white transition"
+            className="inline-block text-sm text-violet-400 hover:text-white transition"
           >
             contact@maybeizen.space
           </a>

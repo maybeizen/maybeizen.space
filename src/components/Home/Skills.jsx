@@ -20,7 +20,7 @@ const Skills = () => {
           initial={{ width: 0 }}
           animate={{ width: "100px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="h-[2px] bg-blue-500 mx-auto mb-12"
+          className="h-[2px] bg-violet-500 mx-auto mb-12"
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -34,7 +34,7 @@ const Skills = () => {
             >
               <button
                 onClick={() => setSelectedSkill(skill)}
-                className="w-full p-4 border border-white/10 bg-white/5 rounded hover:border-blue-500 focus:outline-none"
+                className="w-full p-4 border border-white/10 bg-white/5 rounded hover:border-violet-500 focus:outline-none"
               >
                 <img
                   src={skill.icon}

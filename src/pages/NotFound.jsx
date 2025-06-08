@@ -54,7 +54,7 @@ const NotFound = () => {
             {[...Array(20)].map((_, i) => (
               <React.Fragment key={`grid-${i}`}>
                 <motion.div
-                  className="absolute h-px bg-blue-500 left-0 right-0"
+                  className="absolute h-px bg-violet-500 left-0 right-0"
                   style={{ top: `${i * 5}%` }}
                   initial={{ scaleX: 0, opacity: 0 }}
                   animate={{
@@ -68,7 +68,7 @@ const NotFound = () => {
                   }}
                 />
                 <motion.div
-                  className="absolute w-px bg-blue-500 top-0 bottom-0"
+                  className="absolute w-px bg-violet-500 top-0 bottom-0"
                   style={{ left: `${i * 5}%` }}
                   initial={{ scaleY: 0, opacity: 0 }}
                   animate={{
@@ -91,8 +91,8 @@ const NotFound = () => {
                 key={`circle-${i}`}
                 className={`absolute rounded-full border-2 ${
                   portalCharges > i
-                    ? "border-blue-500 border-opacity-70"
-                    : "border-blue-900 border-opacity-30"
+                    ? "border-violet-500 border-opacity-70"
+                    : "border-violet-900 border-opacity-30"
                 }`}
                 style={{
                   width: `${60 - i * 10}vmin`,
@@ -127,7 +127,7 @@ const NotFound = () => {
                 {[...Array(8)].map((_, i) => (
                   <motion.div
                     key={`beam-${i}`}
-                    className="absolute bg-blue-500 rounded-full origin-center"
+                    className="absolute bg-violet-500 rounded-full origin-center"
                     style={{
                       width: "2px",
                       height: "40vmin",
@@ -152,7 +152,7 @@ const NotFound = () => {
 
             {portalCharges >= 3 && (
               <motion.div
-                className="absolute bg-blue-400 rounded-full blur-md"
+                className="absolute bg-violet-400 rounded-full blur-md"
                 initial={{ width: "5vmin", height: "5vmin", opacity: 0 }}
                 animate={{
                   width: ["5vmin", "10vmin", "5vmin"],
@@ -172,7 +172,7 @@ const NotFound = () => {
                 {[...Array(40)].map((_, i) => (
                   <motion.div
                     key={`particle-${i}`}
-                    className="absolute text-xs text-blue-500 font-mono opacity-70"
+                    className="absolute text-xs text-violet-500 font-mono opacity-70"
                     initial={{
                       x: Math.random() * 100 + "%",
                       y: "-20%",
@@ -205,10 +205,10 @@ const NotFound = () => {
           transition={{ duration: 1 }}
         >
           <div className="relative w-full max-w-xl">
-            <div className="absolute inset-0 border border-blue-500 rounded-md opacity-70" />
+            <div className="absolute inset-0 border border-violet-500 rounded-md opacity-70" />
 
             <motion.div
-              className="absolute h-px w-full bg-blue-400 opacity-50 blur-sm"
+              className="absolute h-px w-full bg-violet-400 opacity-50 blur-sm"
               animate={{ top: ["0%", "100%", "0%"] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
@@ -220,14 +220,16 @@ const NotFound = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
             >
               <div className="font-mono mb-4">
-                <div className="text-blue-500 mb-2 text-sm">SYSTEM ACCESS</div>
-                <div className="text-2xl font-bold text-blue-400">
+                <div className="text-violet-500 mb-2 text-sm">
+                  SYSTEM ACCESS
+                </div>
+                <div className="text-2xl font-bold text-violet-400">
                   TERMINAL ACCESS GRANTED
                 </div>
               </div>
 
               <motion.div
-                className="font-mono text-blue-300 text-sm mb-6"
+                className="font-mono text-violet-300 text-sm mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -238,7 +240,7 @@ const NotFound = () => {
               </motion.div>
 
               <motion.div
-                className="w-16 h-1 bg-blue-500 mx-auto"
+                className="w-16 h-1 bg-violet-500 mx-auto"
                 animate={{ width: ["0%", "100%"] }}
                 transition={{ delay: 1.2, duration: 0.8 }}
               />
@@ -253,7 +255,7 @@ const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center"
         >
-          <h1 className="text-6xl font-bold mb-6 text-blue-500">404</h1>
+          <h1 className="text-6xl font-bold mb-6 text-violet-500">404</h1>
           <p className="text-2xl mb-8">Oops! Page not found.</p>
           <p className="text-lg text-gray-400 mb-10">
             The page you're looking for doesn't exist or has been moved.
@@ -261,7 +263,7 @@ const NotFound = () => {
 
           {showHint && (
             <motion.p
-              className="text-sm text-blue-400 mb-8 italic font-mono"
+              className="text-sm text-violet-400 mb-8 italic font-mono"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -272,7 +274,7 @@ const NotFound = () => {
 
           <Link
             to="/"
-            className="text-white bg-blue-600 px-6 py-3 rounded-full hover:bg-blue-700 transition-colors"
+            className="text-white bg-violet-600 px-6 py-3 rounded-full hover:bg-violet-700 transition-colors"
           >
             Return Home
           </Link>

@@ -17,7 +17,7 @@ const About = () => {
           initial={{ width: 0 }}
           animate={{ width: "100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="h-[2px] bg-blue-500 mx-auto mt-4 mb-12"
+          className="h-[2px] bg-violet-500 mx-auto mt-4 mb-12"
         />
 
         <motion.div
@@ -45,7 +45,7 @@ const About = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="bg-white/5 border border-white/10 p-6 rounded-xl text-left hover:border-blue-500 duration-250 transition-all"
+              className="bg-white/5 border border-white/10 p-6 rounded-xl text-left hover:border-violet-500 duration-250 transition-all"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded">

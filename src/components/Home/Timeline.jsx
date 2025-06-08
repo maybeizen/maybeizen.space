@@ -72,7 +72,7 @@ const Timeline = () => {
           initial={{ width: 0 }}
           animate={{ width: "120px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="h-[2px] bg-blue-500 mx-auto mb-12"
+          className="h-[2px] bg-violet-500 mx-auto mb-12"
         />
 
         <div
@@ -89,10 +89,10 @@ const Timeline = () => {
             >
               <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                 <div className="flex items-center gap-4 mb-2">
-                  <div className="w-10 h-10 flex items-center justify-center bg-blue-500 rounded text-black">
+                  <div className="w-10 h-10 flex items-center justify-center bg-violet-500 rounded text-black">
                     <i className={`${event.icon} text-lg`}></i>
                   </div>
-                  <span className="text-sm text-blue-400 font-medium">
+                  <span className="text-sm text-violet-400 font-medium">
                     {event.year}
                   </span>
                 </div>
@@ -116,7 +116,7 @@ const Timeline = () => {
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-sm px-6 py-2 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-black transition-all"
+            className="inline-flex items-center gap-2 rounded-sm px-6 py-2 border border-violet-500 text-violet-400 hover:bg-violet-500 hover:text-black transition-all"
           >
             <span>See My Work</span>
             <i className="fa-solid fa-arrow-right"></i>

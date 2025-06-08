@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="flex gap-3 pt-3">
             <a
               href="#projects"
-              className="text-sm px-4 py-2 rounded border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-black transition-colors"
+              className="text-sm px-4 py-2 rounded border border-violet-500 text-violet-400 hover:bg-violet-500 hover:text-black transition-colors"
             >
               View Work
             </a>
@@ -35,7 +35,7 @@ const Hero = () => {
               href="https://github.com/maybeizen"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm px-4 py-2 rounded border border-gray-600 text-gray-400 hover:text-white hover:border-blue-400 transition-colors"
+              className="text-sm px-4 py-2 rounded border border-gray-600 text-gray-400 hover:text-white hover:border-violet-400 transition-colors"
             >
               GitHub
             </a>
