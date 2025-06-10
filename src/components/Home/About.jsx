@@ -24,12 +24,12 @@ const About = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="space-y-6 text-white/80 text-base leading-relaxed max-w-3xl mx-auto"
+          className="space-y-6 text-base leading-relaxed max-w-3xl mx-auto"
         >
           <p>
-            Hey, I'm Izen — a full-stack developer and anime lover. I find that
-            the emotional depth and creativity in anime directly inspire the way
-            I solve problems and build software.
+            Hey, I'm maybeizen — a full-stack developer and anime lover. I find
+            that the emotional depth and creativity in anime directly inspire
+            the way I solve problems and build software.
           </p>
           <p>
             Every project I tackle is like crafting a new world, much like the
@@ -56,12 +56,15 @@ const About = () => {
               <p className="text-white/70 text-sm mb-4">{card.description}</p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {card.tags.map((tag, i) => (
-                  <span
+                  <a
                     key={i}
-                    className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60"
+                    href={card.tagLinks[i]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60 hover:bg-white/10 transition-colors"
                   >
                     {tag}
-                  </span>
+                  </a>
                 ))}
               </div>
             </motion.div>
@@ -77,14 +80,20 @@ const cards = [
     icon: "fa-solid fa-code",
     title: "Coding Journey",
     description:
-      "Started turning ideas into code in 2022 — and haven’t stopped since.",
+      "Started turning ideas into code in 2022 — and haven't stopped since.",
     tags: ["Typescript", "GoLang"],
+    tagLinks: ["https://www.typescriptlang.org/", "https://go.dev/"],
   },
   {
     icon: "fa-solid fa-tv",
     title: "Anime Fan",
     description: "Inspired by stories like Darling in the Franxx and Horimiya.",
     tags: ["DarliFra", "Horimiya", "Tsukigakirei"],
+    tagLinks: [
+      "https://en.wikipedia.org/wiki/Darling_in_the_Franxx",
+      "https://en.wikipedia.org/wiki/Hori-san_to_Miyamura-kun",
+      "https://en.wikipedia.org/wiki/Tsuki_ga_Kirei",
+    ],
   },
   {
     icon: "fa-solid fa-laptop-code",
@@ -92,6 +101,11 @@ const cards = [
     description:
       "Designing projects based on the anime I love and ideas that spark joy.",
     tags: ["VS Code", "GitHub", "Node.js"],
+    tagLinks: [
+      "https://code.visualstudio.com/",
+      "https://github.com/",
+      "https://nodejs.org/",
+    ],
   },
   {
     icon: "fa-solid fa-gamepad",
@@ -99,12 +113,22 @@ const cards = [
     description:
       "From building modpacks in Minecraft to sniping in Call of Duty.",
     tags: ["Minecraft", "Call of Duty", "The Finals"],
+    tagLinks: [
+      "https://www.minecraft.net/",
+      "https://www.callofduty.com/",
+      "https://www.reachthefinals.com/",
+    ],
   },
   {
     icon: "fa-solid fa-music",
     title: "Music & Code",
     description: "Coding to a soundtrack — always. It fuels the creative flow.",
     tags: ["Linkin Park", "Slipknot", "Skillet"],
+    tagLinks: [
+      "https://www.linkinpark.com/",
+      "https://slipknot1.com/",
+      "https://www.skillet.com/",
+    ],
   },
   {
     icon: "fa-solid fa-graduation-cap",
@@ -112,6 +136,11 @@ const cards = [
     description:
       "Exploring new tools, open source, and ways to grow every day.",
     tags: ["Tutorials", "Open Source", "AI"],
+    tagLinks: [
+      "https://www.freecodecamp.org/",
+      "https://opensource.org/",
+      "https://openai.com/",
+    ],
   },
 ];
 

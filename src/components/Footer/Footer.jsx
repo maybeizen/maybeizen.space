@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ThemeSelector from "./ThemeSelector";
 
 const Footer = () => {
   return (
@@ -82,13 +83,22 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      <div className="border-t border-white/10 pt-8 text-center text-white/40 text-sm">
+      <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.4 }}
+          className="text-white/40 text-sm mb-4 md:mb-0"
         >
           &copy; {new Date().getFullYear()} maybeizen. Crafted with care.
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.4 }}
+        >
+          <ThemeSelector />
         </motion.div>
       </div>
     </footer>

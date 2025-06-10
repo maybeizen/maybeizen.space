@@ -1,14 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./routes/index.routes.jsx";
+import ThemeToggle from "./components/ThemeToggle";
+import ThemeProvider from "./contexts/ThemeContext";
 
 const App = () => {
   return (
-    <Router>
-      <div className="App min-h-screen bg-zinc-950">
-        <AppRoutes />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="App min-h-screen">
+          <ThemeToggle />
+          <AppRoutes />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 };
 

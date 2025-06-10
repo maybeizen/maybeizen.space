@@ -7,9 +7,55 @@ html {
 body {
   transition: background-color 0.3s, color 0.3s;
   font-family: "Inter", sans-serif;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000 !important;
+  color: #ffffff !important;
   letter-spacing: 0.01em;
+}
+
+.dark-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.light-mode {
+  background-color: #f5f5f5 !important;
+  color: #1a1a1a !important;
+}
+
+.light-mode ::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background-color: #888888;
+}
+
+.light-mode * {
+  scrollbar-color: #888888 #e0e0e0;
+}
+
+.light-mode .bg-black {
+  background-color: #f5f5f5 !important;
+}
+
+.light-mode .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.light-mode .text-white {
+  color: #1a1a1a !important;
+}
+
+.light-mode .text-white\/70 {
+  color: rgba(26, 26, 26, 0.7) !important;
+}
+
+.light-mode .text-white\/60 {
+  color: rgba(26, 26, 26, 0.6) !important;
 }
 
 ::-webkit-scrollbar {
@@ -60,7 +106,6 @@ body {
   animation: subtle-shift 20s linear infinite;
 }
 
-/* Interactive elements hover effect */
 a,
 button,
 [role="button"],
@@ -104,4 +149,235 @@ button:hover,
 .btn-secondary {
   @apply px-8 py-3 border border-white/20 text-white font-medium tracking-wider
   hover:border-white transition-all duration-300 flex items-center gap-2;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotateY-180 {
+  transform: rotateY(180deg);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.light-mode .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .preserve-3d {
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+.rotateY-180 .card-content {
+  transform: rotateY(180deg);
+}
+
+.perspective-1000 > div {
+  height: 100%;
+}
+
+.relative.h-\[300px\] {
+  display: flex;
+  flex-direction: column;
+}
+
+.relative.z-10.h-full {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.flex.flex-wrap.gap-2.text-xs.text-white\/60.mb-8 {
+  margin-bottom: 40px;
+}
+
+.light-mode .border-violet-500 {
+  border-color: rgb(139, 92, 246);
+}
+
+.light-mode .text-violet-400 {
+  color: rgb(167, 139, 250);
+}
+
+.transition-all.duration-500 {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Anime Theme */
+.theme-anime {
+  background-color: #2a1b3d !important;
+  color: #f8f8f8 !important;
+  --theme-primary: #ff9ff3;
+  --theme-secondary: #f6e58d;
+  --theme-accent: #c56cf0;
+}
+
+.theme-anime .bg-black {
+  background-color: #2a1b3d !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9ff3' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+}
+
+.theme-anime .bg-violet-500 {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-anime .border-violet-500 {
+  border-color: var(--theme-primary) !important;
+}
+
+.theme-anime .text-violet-400 {
+  color: var(--theme-accent) !important;
+}
+
+.theme-anime .hover\:bg-violet-500:hover {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-anime .hover\:text-violet-400:hover {
+  color: var(--theme-accent) !important;
+}
+
+.theme-anime .hover\:border-violet-500:hover {
+  border-color: var(--theme-primary) !important;
+}
+
+/* Cyberpunk Theme */
+.theme-cyberpunk {
+  background-color: #0a0a18 !important;
+  color: #f9f9f9 !important;
+  --theme-primary: #f9ca24;
+  --theme-secondary: #00ff9f;
+  --theme-accent: #ff073a;
+}
+
+.theme-cyberpunk .bg-black {
+  background-color: #0a0a18 !important;
+  background-image: linear-gradient(
+      rgba(0, 255, 159, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 255, 159, 0.05) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+
+.theme-cyberpunk .bg-violet-500 {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-cyberpunk .border-violet-500 {
+  border-color: var(--theme-primary) !important;
+}
+
+.theme-cyberpunk .text-violet-400 {
+  color: var(--theme-secondary) !important;
+}
+
+.theme-cyberpunk .hover\:bg-violet-500:hover {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-cyberpunk .hover\:text-violet-400:hover {
+  color: var(--theme-secondary) !important;
+}
+
+.theme-cyberpunk .hover\:border-violet-500:hover {
+  border-color: var(--theme-primary) !important;
+}
+
+.theme-cyberpunk h1,
+.theme-cyberpunk h2,
+.theme-cyberpunk h3,
+.theme-cyberpunk h4 {
+  text-shadow: 3px 3px 0px var(--theme-accent) !important;
+}
+
+/* Terminal Theme */
+.theme-terminal {
+  background-color: #0c0c0c !important;
+  color: #00ff00 !important;
+  --theme-primary: #00ff00;
+  --theme-secondary: #ffffff;
+  --theme-accent: #33ff33;
+  font-family: "Courier New", monospace !important;
+}
+
+.theme-terminal .bg-black {
+  background-color: #0c0c0c !important;
+}
+
+.theme-terminal .bg-white\/5 {
+  background-color: rgba(0, 255, 0, 0.05) !important;
+}
+
+.theme-terminal .bg-violet-500 {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-terminal .border-violet-500 {
+  border-color: var(--theme-primary) !important;
+}
+
+.theme-terminal .text-violet-400 {
+  color: var(--theme-primary) !important;
+}
+
+.theme-terminal .hover\:bg-violet-500:hover {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-terminal .hover\:text-violet-400:hover {
+  color: var(--theme-primary) !important;
+}
+
+.theme-terminal .hover\:border-violet-500:hover {
+  border-color: var(--theme-primary) !important;
+}
+
+.theme-terminal .text-white {
+  color: var(--theme-primary) !important;
+}
+
+.theme-terminal .text-white\/70 {
+  color: rgba(0, 255, 0, 0.7) !important;
+}
+
+.theme-terminal .text-white\/60 {
+  color: rgba(0, 255, 0, 0.6) !important;
+}
+
+.theme-terminal .text-white\/40 {
+  color: rgba(0, 255, 0, 0.4) !important;
+}
+
+.theme-terminal ::selection {
+  background-color: var(--theme-primary);
+  color: #000;
 }
