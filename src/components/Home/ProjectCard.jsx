@@ -12,7 +12,8 @@ const ProjectCard = ({
 }) => {
   const cardId = isSecondary ? `s${index}` : index;
   const isFlipped = flippedCard === cardId;
-  const projectLink = project.githubLink || project.modrinthLink;
+  const projectLink =
+    project.liveLink || project.githubLink || project.modrinthLink;
 
   return (
     <motion.div
@@ -83,7 +84,7 @@ const ProjectCard = ({
                 whileHover={{ y: -2 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                View Project
+                {project.liveLink ? "Visit Site" : "View Project"}
                 <i className="fa-solid fa-external-link-alt text-xs"></i>
               </motion.a>
             </div>

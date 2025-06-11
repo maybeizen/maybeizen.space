@@ -1,5 +1,16 @@
 export const mainProjects = [
   {
+    name: "Solar Nodes",
+    description:
+      "Budget-friendly EU Minecraft hosting, starting at $0.70/GB/month.",
+    technologies: ["Laravel", "Svelte", "Docker", "Pterodactyl"],
+    liveLink: "https://solarnodes.net",
+    category: "Backend",
+    details:
+      "Solar Nodes provides affordable Minecraft server hosting in the EU with highly competitive pricing, powered by Ryzen 9 3900X. The platform uses Laravel and Svelte for the frontend, with Docker containerization and Pterodactyl panel for server management.",
+    imageUrl: "/images/code/solarnodes.png",
+  },
+  {
     name: "PasteIt.lol",
     description:
       "A fast, minimalist pastebin alternative. Just paste your text, pick a language, and share the link. No accounts. No clutter.",
