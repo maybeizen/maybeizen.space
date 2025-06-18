@@ -83,7 +83,7 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
+      <div className="border-t max-w-6xl mx-auto border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

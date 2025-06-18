@@ -6,7 +6,7 @@ html {
 
 body {
   transition: background-color 0.3s, color 0.3s;
-  font-family: "Inter", sans-serif;
+  font-family: "Figtree", sans-serif;
   background-color: #000000 !important;
   color: #ffffff !important;
   letter-spacing: 0.01em;
