@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { mainProjects, secondaryProjects } from "./projects-data";
 import CategoryFilters from "./CategoryFilters";
 import ProjectGrid from "./ProjectGrid";
@@ -7,50 +6,37 @@ import ProjectGrid from "./ProjectGrid";
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [showMore, setShowMore] = useState(false);
-  const [flippedCard, setFlippedCard] = useState(null);
   const [filteredMain, setFilteredMain] = useState(mainProjects);
   const [filteredSecondary, setFilteredSecondary] = useState(secondaryProjects);
 
-  const categories = ["All", "Frontend", "Backend"];
+  const categories = ["All", "Backend", "Frontend"];
 
   useEffect(() => {
-    setFilteredMain(
-      activeFilter === "All"
-        ? mainProjects
-        : mainProjects.filter((p) => p.category === activeFilter)
-    );
-    setFilteredSecondary(
-      activeFilter === "All"
-        ? secondaryProjects
-        : secondaryProjects.filter((p) => p.category === activeFilter)
-    );
-    setFlippedCard(null);
-  }, [activeFilter]);
+    let filtered = mainProjects;
 
-  const handleCardFlip = (index, event) => {
-    event.stopPropagation();
-    if (flippedCard === index) {
-      setFlippedCard(null);
-    } else {
-      setFlippedCard(index);
+    // Apply category filter only
+    if (activeFilter !== "All") {
+      filtered = filtered.filter((p) => p.category === activeFilter);
     }
-  };
 
-  const openLink = (url) => {
-    if (url && url !== "#") window.open(url, "_blank");
-  };
+    setFilteredMain(filtered);
+
+    // Apply same filter to secondary projects
+    let filteredSecondary = secondaryProjects;
+    if (activeFilter !== "All") {
+      filteredSecondary = filteredSecondary.filter(
+        (p) => p.category === activeFilter
+      );
+    }
+    setFilteredSecondary(filteredSecondary);
+  }, [activeFilter]);
 
   return (
     <section id="projects" className="bg-black text-white py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-semibold text-center mb-6"
-        >
+        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
           Projects
-        </motion.h2>
+        </h2>
         <div className="h-[2px] bg-violet-500 w-24 mx-auto mb-12"></div>
 
         <CategoryFilters
@@ -59,43 +45,26 @@ const Projects = () => {
           setActiveFilter={setActiveFilter}
         />
 
-        <ProjectGrid
-          projects={filteredMain}
-          flippedCard={flippedCard}
-          handleCardFlip={handleCardFlip}
-          openLink={openLink}
-        />
+        <ProjectGrid projects={filteredMain} />
 
-        <div className="text-center mt-16">
-          <motion.button
-            onClick={() => setShowMore(!showMore)}
-            className="px-6 py-2 rounded-sm border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition interactive"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {showMore ? "Show Less" : "See More"}
-          </motion.button>
-        </div>
+        {filteredSecondary.length > 0 && (
+          <>
+            <div className="text-center mt-16">
+              <button
+                onClick={() => setShowMore(!showMore)}
+                className="px-6 py-2 rounded-sm border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-colors"
+              >
+                {showMore ? "Show Less" : "See More"}
+              </button>
+            </div>
 
-        <AnimatePresence>
-          {showMore && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <ProjectGrid
-                projects={filteredSecondary}
-                flippedCard={flippedCard}
-                handleCardFlip={handleCardFlip}
-                openLink={openLink}
-                isSecondary={true}
-                className="mt-12"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+            {showMore && (
+              <div className="mt-12">
+                <ProjectGrid projects={filteredSecondary} isSecondary={true} />
+              </div>
+            )}
+          </>
+        )}
       </div>
     </section>
   );

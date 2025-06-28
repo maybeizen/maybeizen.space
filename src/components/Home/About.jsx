@@ -1,51 +1,60 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <section id="about" className="bg-black py-28 text-white px-4">
       <div className="max-w-5xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-semibold tracking-tight"
-        >
+        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-12">
           About Me
-        </motion.h2>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="h-[2px] bg-violet-500 mx-auto mt-4 mb-12"
-        />
+        </h2>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6 text-base leading-relaxed max-w-3xl mx-auto"
-        >
+        <div className="space-y-6 text-base leading-relaxed max-w-3xl mx-auto mb-16">
           <p>
-            Hey, I'm maybeizen — a full-stack developer and anime lover. I find
+            Hey, I'm maybeizen — a backend developer and anime lover. I find
             that the emotional depth and creativity in anime directly inspire
-            the way I solve problems and build software.
+            the way I solve problems and build robust systems.
           </p>
           <p>
             Every project I tackle is like crafting a new world, much like the
             ones in my favorite shows. I thrive on learning and pushing my
-            skills with tech that empowers creativity and storytelling.
+            skills with technologies that power the web's infrastructure.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Backend Focus Section */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-white/5 border border-white/10 p-8 rounded-xl text-left">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 flex items-center justify-center bg-violet-500/20 rounded">
+                <i className="fa-solid fa-server text-violet-400 text-lg"></i>
+              </div>
+              <h3 className="text-xl font-medium text-violet-400">
+                Backend Focus
+              </h3>
+            </div>
+            <p className="text-white/80 text-sm leading-relaxed mb-4">
+              After starting my journey with frontend development, I've
+              transitioned to focusing primarily on backend systems. I
+              discovered that I'm more passionate about building the
+              infrastructure that powers applications rather than just the
+              interfaces.
+            </p>
+            <p className="text-white/80 text-sm leading-relaxed">
+              My experience with frontend technologies has given me valuable
+              insights into how APIs should be designed and how backend systems
+              can better serve frontend applications. I now specialize in
+              building scalable APIs, database design, and server-side
+              applications using technologies like Laravel, Node.js, and
+              TypeScript.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="bg-white/5 border border-white/10 p-6 rounded-xl text-left hover:border-violet-500 duration-250 transition-all"
+              className="bg-white/5 border border-white/10 p-6 rounded-xl text-left"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded">
@@ -56,18 +65,15 @@ const About = () => {
               <p className="text-white/70 text-sm mb-4">{card.description}</p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {card.tags.map((tag, i) => (
-                  <a
+                  <span
                     key={i}
-                    href={card.tagLinks[i]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60 hover:bg-white/10 transition-colors"
+                    className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60"
                   >
                     {tag}
-                  </a>
+                  </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -78,34 +84,22 @@ const About = () => {
 const cards = [
   {
     icon: "fa-solid fa-code",
-    title: "Coding Journey",
+    title: "Backend Development",
     description:
-      "Started turning ideas into code in 2022 — and haven't stopped since.",
-    tags: ["Typescript", "GoLang"],
-    tagLinks: ["https://www.typescriptlang.org/", "https://go.dev/"],
+      "Building robust APIs and server-side applications since 2022.",
+    tags: ["Laravel", "Node.js", "TypeScript"],
   },
   {
     icon: "fa-solid fa-tv",
     title: "Anime Fan",
     description: "Inspired by stories like Darling in the Franxx and Horimiya.",
     tags: ["DarliFra", "Horimiya", "Tsukigakirei"],
-    tagLinks: [
-      "https://en.wikipedia.org/wiki/Darling_in_the_Franxx",
-      "https://en.wikipedia.org/wiki/Hori-san_to_Miyamura-kun",
-      "https://en.wikipedia.org/wiki/Tsuki_ga_Kirei",
-    ],
   },
   {
-    icon: "fa-solid fa-laptop-code",
-    title: "Creative Dev",
-    description:
-      "Designing projects based on the anime I love and ideas that spark joy.",
-    tags: ["VS Code", "GitHub", "Node.js"],
-    tagLinks: [
-      "https://code.visualstudio.com/",
-      "https://github.com/",
-      "https://nodejs.org/",
-    ],
+    icon: "fa-solid fa-database",
+    title: "System Architecture",
+    description: "Designing scalable backend systems and database structures.",
+    tags: ["MySQL", "MongoDB", "Docker"],
   },
   {
     icon: "fa-solid fa-gamepad",
@@ -113,34 +107,19 @@ const cards = [
     description:
       "From building modpacks in Minecraft to sniping in Call of Duty.",
     tags: ["Minecraft", "Call of Duty", "The Finals"],
-    tagLinks: [
-      "https://www.minecraft.net/",
-      "https://www.callofduty.com/",
-      "https://www.reachthefinals.com/",
-    ],
   },
   {
     icon: "fa-solid fa-music",
     title: "Music & Code",
     description: "Coding to a soundtrack — always. It fuels the creative flow.",
     tags: ["Linkin Park", "Slipknot", "Skillet"],
-    tagLinks: [
-      "https://www.linkinpark.com/",
-      "https://slipknot1.com/",
-      "https://www.skillet.com/",
-    ],
   },
   {
     icon: "fa-solid fa-graduation-cap",
     title: "Always Learning",
     description:
-      "Exploring new tools, open source, and ways to grow every day.",
-    tags: ["Tutorials", "Open Source", "AI"],
-    tagLinks: [
-      "https://www.freecodecamp.org/",
-      "https://opensource.org/",
-      "https://openai.com/",
-    ],
+      "Exploring new backend technologies and ways to grow every day.",
+    tags: ["GoLang", "Python", "APIs"],
   },
 ];
 

@@ -10,7 +10,7 @@ const App = () => {
     <ThemeProvider>
       <Router>
         <div className="App min-h-screen">
-          {/* <Banner /> */}
+          <Banner />
           <AppRoutes />
         </div>
       </Router>
