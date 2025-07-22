@@ -1,15 +1,37 @@
 export const mainProjects = [
   {
-    name: "Solar Nodes",
+    name: "Orvex",
     description:
-      "Budget-friendly EU Minecraft hosting, starting at $0.70/GB/month.",
-    technologies: ["Laravel", "Docker", "Pterodactyl", "MySQL"],
-    liveLink: "https://solarnodes.net",
+      "Budget-friendly EU/US Minecraft hosting, starting at $0.70/GB.",
+    technologies: ["PHP", "MySQL", "Docker", "Pterodactyl"],
+    liveLink: "https://orvex.cc",
     category: "Backend",
     archived: false,
     details:
-      "Solar Nodes provides affordable Minecraft server hosting in the EU with highly competitive pricing, powered by Ryzen 9 3900X. The platform uses Laravel for backend operations, Docker containerization, and Pterodactyl panel for server management. Features include automated billing, server provisioning, and real-time monitoring.",
-    imageUrl: "/images/code/solarnodes.png",
+      "Orvex provides affordable Minecraft server hosting in in EU and US. The platform uses PHP for backend operations, MySQL for database, Docker containerization, and Pterodactyl panel for server management. Features include automated billing, server provisioning, and real-time monitoring.",
+    imageUrl: "/images/code/orvex.png",
+  },
+  {
+    name: "NuboDB",
+    description: "A straightfoward document-based local storage solution.",
+    technologies: ["TypeScript", "Node.js"],
+    liveLink: "https://github.com/maybeizen/nubodb",
+    category: "Backend",
+    archived: false,
+    details:
+      "NuboDB is a simple document-based local storage database. It securely stores data in JSON documents, exposing a MongoDB-like API for CRUD operations. NuboDB is built to be simple and fast, and even comes with on-board encryption to make sure your data stays safe.",
+    imageUrl: "/images/code/nubodb.png",
+  },
+  {
+    name: "NetherCore",
+    description: "Custom Discord bot for Nether Host with advanced features.",
+    technologies: ["TypeScript", "Node.js", "Discord.js", "MongoDB"],
+    githubLink: "#",
+    category: "Backend",
+    archived: false,
+    details:
+      "A specialized Discord bot built for Nether Host's community server. The bot handles support ticket management, server status monitoring, and community engagement features. Built with Discord.js, TypeScript, and CommandKit. It includes a custom plugin system for extending functionality, automated moderation, and integration with hosting panel APIs.",
+    imageUrl: "/images/code/nethercore.png",
   },
   {
     name: "PteroLink",
@@ -22,17 +44,6 @@ export const mainProjects = [
     details:
       "PteroLink is an npm package that provides a clean, typed interface to interact with the Pterodactyl game server panel API. I designed it with type safety in mind, using TypeScript to ensure all API calls and responses are properly typed. The package includes comprehensive error handling, connection management, and supports all Pterodactyl API endpoints.",
     imageUrl: "/images/code/pterolink.png",
-  },
-  {
-    name: "NetherCore",
-    description: "Custom Discord bot for Nether Host with advanced features.",
-    technologies: ["TypeScript", "Node.js", "Discord.js", "MongoDB"],
-    githubLink: "#",
-    category: "Backend",
-    archived: false,
-    details:
-      "A specialized Discord bot built for Nether Host's community server. The bot handles support ticket management, server status monitoring, and community engagement features. Built with Discord.js, TypeScript, and CommandKit. It includes a custom plugin system for extending functionality, automated moderation, and integration with hosting panel APIs.",
-    imageUrl: "/images/code/nethercore.png",
   },
   {
     name: "PasteIt.lol",
@@ -63,7 +74,7 @@ export const mainProjects = [
     technologies: ["Svelte", "Tailwind CSS", "TypeScript"],
     githubLink: "https://github.com/VoxynLabs/voxynlabs.github.io",
     category: "Frontend",
-    archived: false,
+    archived: true,
     details:
       "This was my first project using Svelte, which I chose for its lightweight footprint and excellent animation capabilities. The site features custom hovers and animations, interactive product showcases, and responsive design. I implemented a dark/light mode toggle and optimized the site for performance. This project helped me understand the limitations of frontend-only development.",
     imageUrl: "/images/code/voxyn.png",

@@ -1,7 +1,11 @@
-import React from "react";
-import profilePic from "/images/akane.jpg";
+import React, { useState } from "react";
+import ProfilePictureSwitcher from "../ProfilePictureSwitcher";
 
 const Hero = () => {
+  const [currentProfilePic, setCurrentProfilePic] = useState(
+    "/images/pfp/akane.jpg"
+  );
+
   return (
     <section
       id="home"
@@ -10,7 +14,7 @@ const Hero = () => {
       <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div className="space-y-4">
           <h1 className="text-3xl md:text-4xl font-medium tracking-tight">
-            MAYBEIZEN
+            maybeizen
           </h1>
 
           <p className="text-gray-400 text-base leading-relaxed max-w-sm">
@@ -37,10 +41,9 @@ const Hero = () => {
         </div>
 
         <div className="flex justify-center md:justify-end">
-          <img
-            src={profilePic}
-            alt="maybeizen"
-            className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover border border-gray-700"
+          <ProfilePictureSwitcher
+            currentImage={currentProfilePic}
+            onImageChange={setCurrentProfilePic}
           />
         </div>
       </div>

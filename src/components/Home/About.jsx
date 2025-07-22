@@ -21,7 +21,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Backend Focus Section */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white/5 border border-white/10 p-8 rounded-xl text-left">
             <div className="flex items-center gap-3 mb-4">
@@ -93,7 +92,7 @@ const cards = [
     icon: "fa-solid fa-tv",
     title: "Anime Fan",
     description: "Inspired by stories like Darling in the Franxx and Horimiya.",
-    tags: ["DarliFra", "Horimiya", "Tsukigakirei"],
+    tags: ["DarliFra", "Bocchi the Rock!", "Tsukigakirei"],
   },
   {
     icon: "fa-solid fa-database",
@@ -112,14 +111,14 @@ const cards = [
     icon: "fa-solid fa-music",
     title: "Music & Code",
     description: "Coding to a soundtrack — always. It fuels the creative flow.",
-    tags: ["Linkin Park", "Slipknot", "Skillet"],
+    tags: ["Linkin Park", "Paramore", "Skillet"],
   },
   {
     icon: "fa-solid fa-graduation-cap",
     title: "Always Learning",
     description:
       "Exploring new backend technologies and ways to grow every day.",
-    tags: ["GoLang", "Python", "APIs"],
+    tags: ["GoLang", "Rust", "APIs"],
   },
 ];
 
