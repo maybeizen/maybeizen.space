@@ -1,15 +1,14 @@
 export const mainProjects = [
   {
-    name: "Orvex",
-    description:
-      "Budget-friendly EU/US Minecraft hosting, starting at $0.70/GB.",
-    technologies: ["PHP", "MySQL", "Docker", "Pterodactyl"],
-    liveLink: "https://orvex.cc",
+    name: "DriftLabs",
+    description: "Developer utilities made easy.",
+    technologies: ["TypeScript", "MongoDB", "React", "GoLang"],
+    liveLink: "https://driftlabs.dev",
     category: "Backend",
     archived: false,
     details:
-      "Orvex provides affordable Minecraft server hosting in in EU and US. The platform uses PHP for backend operations, MySQL for database, Docker containerization, and Pterodactyl panel for server management. Features include automated billing, server provisioning, and real-time monitoring.",
-    imageUrl: "/images/code/orvex.png",
+      "A comprehensive suite of developer tools and public APIs designed to streamline your workflow. From JSON formatting to image optimization, we've got everything you need.",
+    imageUrl: "/images/code/driftlabs.png",
   },
   {
     name: "NuboDB",
@@ -34,6 +33,19 @@ export const mainProjects = [
     imageUrl: "/images/code/nethercore.png",
   },
   {
+    name: "Orvex",
+    description:
+      "Budget-friendly EU/US Minecraft hosting, starting at $0.70/GB.",
+    technologies: ["PHP", "MySQL", "Docker", "Pterodactyl"],
+    liveLink: "https://orvex.cc",
+    category: "Backend",
+    archived: true,
+    details:
+      "Orvex provides affordable Minecraft server hosting in in EU and US. The platform uses PHP for backend operations, MySQL for database, Docker containerization, and Pterodactyl panel for server management. Features include automated billing, server provisioning, and real-time monitoring.",
+    imageUrl: "/images/code/orvex.png",
+  },
+
+  {
     name: "PteroLink",
     description:
       "npm package to communicate with the Pterodactyl API. Currently on hold but planning to resume development.",
@@ -57,6 +69,9 @@ export const mainProjects = [
       "I built PasteIt as a solution to the clutter found in most pastebin services. It uses Laravel as the backend with React and Inertia for a seamless SPA experience. Features include syntax highlighting for 10+ languages, configurable expiration, and unique URL generation. This project represents my transition period from frontend to backend focus.",
     imageUrl: "/images/code/pasteit.png",
   },
+];
+
+export const secondaryProjects = [
   {
     name: "membercat.com",
     description: "Site for Membercat Studios, built with Laravel and React.",
@@ -79,9 +94,6 @@ export const mainProjects = [
       "This was my first project using Svelte, which I chose for its lightweight footprint and excellent animation capabilities. The site features custom hovers and animations, interactive product showcases, and responsive design. I implemented a dark/light mode toggle and optimized the site for performance. This project helped me understand the limitations of frontend-only development.",
     imageUrl: "/images/code/voxyn.png",
   },
-];
-
-export const secondaryProjects = [
   {
     name: "Performium",
     description:

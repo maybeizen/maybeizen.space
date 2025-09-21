@@ -10,43 +10,19 @@ const About = () => {
 
         <div className="space-y-6 text-base leading-relaxed max-w-3xl mx-auto mb-16">
           <p>
-            Hey, I'm maybeizen — a backend developer and anime lover. I find
-            that the emotional depth and creativity in anime directly inspire
-            the way I solve problems and build robust systems.
+            Hey, I'm maybeizen — a backend developer, musician, and anime
+            enthusiast. I've found that the rhythm of coding and the rhythm of
+            music share something beautiful: both require precision, creativity,
+            and the ability to build something greater than the sum of their
+            parts.
           </p>
           <p>
-            Every project I tackle is like crafting a new world, much like the
-            ones in my favorite shows. I thrive on learning and pushing my
-            skills with technologies that power the web's infrastructure.
+            When I'm not behind the drum kit or diving deep into anime worlds,
+            I'm crafting robust backend systems that power the web. Every
+            project feels like composing a new song — finding the right tempo,
+            building the perfect structure, and making sure every component
+            works in harmony.
           </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-white/5 border border-white/10 p-8 rounded-xl text-left">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 flex items-center justify-center bg-violet-500/20 rounded">
-                <i className="fa-solid fa-server text-violet-400 text-lg"></i>
-              </div>
-              <h3 className="text-xl font-medium text-violet-400">
-                Backend Focus
-              </h3>
-            </div>
-            <p className="text-white/80 text-sm leading-relaxed mb-4">
-              After starting my journey with frontend development, I've
-              transitioned to focusing primarily on backend systems. I
-              discovered that I'm more passionate about building the
-              infrastructure that powers applications rather than just the
-              interfaces.
-            </p>
-            <p className="text-white/80 text-sm leading-relaxed">
-              My experience with frontend technologies has given me valuable
-              insights into how APIs should be designed and how backend systems
-              can better serve frontend applications. I now specialize in
-              building scalable APIs, database design, and server-side
-              applications using technologies like Laravel, Node.js, and
-              TypeScript.
-            </p>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -110,15 +86,16 @@ const cards = [
   {
     icon: "fa-solid fa-music",
     title: "Music & Code",
-    description: "Coding to a soundtrack — always. It fuels the creative flow.",
-    tags: ["Linkin Park", "Paramore", "Skillet"],
+    description:
+      "Drummer and coding enthusiast — always coding to a soundtrack. Music fuels the creative flow.",
+    tags: ["Linkin Park", "Deftones", "Mudvayne"],
   },
   {
     icon: "fa-solid fa-graduation-cap",
     title: "Always Learning",
     description:
       "Exploring new backend technologies and ways to grow every day.",
-    tags: ["GoLang", "Rust", "APIs"],
+    tags: ["GoLang", "C", "APIs"],
   },
 ];
 

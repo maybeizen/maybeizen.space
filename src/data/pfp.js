@@ -6,6 +6,12 @@ export const profilePictures = [
     image: "/images/pfp/akane.jpg",
   },
   {
+    id: "Azumi",
+    name: "Azumi",
+    anime: "Tsuki ga Kirei",
+    image: "/images/pfp/azumi.jpg",
+  },
+  {
     id: "aharen",
     name: "Aharen",
     anime: "Aharen-san wa Hakarenai",
@@ -70,5 +76,29 @@ export const profilePictures = [
     name: "Hiro",
     anime: "Darling in the Franxx",
     image: "/images/pfp/hiro.jpg",
+  },
+  {
+    id: "mitsuha",
+    name: "Mitsuha",
+    anime: "Your Name",
+    image: "/images/pfp/mitsuha.jpg",
+  },
+  {
+    id: "gripen",
+    name: "Gripen",
+    anime: "Girly Air Force",
+    image: "/images/pfp/gripen.jpg",
+  },
+  {
+    id: "chisato",
+    name: "Chisato",
+    anime: "Lycoris Recoil",
+    image: "/images/pfp/chisato.jpg",
+  },
+  {
+    id: "inoue",
+    name: "Inoue",
+    anime: "Lycoris Recoil",
+    image: "/images/pfp/inoue.jpg",
   },
 ];

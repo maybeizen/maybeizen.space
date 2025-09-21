@@ -31,7 +31,7 @@ const Footer = () => {
               <i className="fa-brands fa-twitter text-xl"></i>
             </a>
             <a
-              href="mailto:contact@maybeizen.space"
+              href="mailto:me@maybeizen.space"
               className="text-white/50 hover:text-violet-400 transition-colors"
               aria-label="Email"
             >
@@ -62,10 +62,10 @@ const Footer = () => {
             Want to collaborate or have questions? I'm always open to chat.
           </p>
           <a
-            href="mailto:contact@maybeizen.space"
+            href="mailto:me@maybeizen.space"
             className="inline-block text-sm text-violet-400 hover:text-white transition-colors"
           >
-            contact@maybeizen.space
+            me@maybeizen.space
           </a>
         </div>
       </div>
