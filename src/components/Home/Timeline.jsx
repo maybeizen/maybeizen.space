@@ -81,26 +81,20 @@ const Timeline = () => {
   };
 
   return (
-    <section id="timeline" className="bg-black py-24 px-4">
-      <div className="max-w-4xl mx-auto text-white">
+    <section id="timeline" className="bg-black py-28 text-white px-4">
+      <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-semibold text-center tracking-tight mb-4"
+          className="text-4xl md:text-5xl font-semibold tracking-tight mb-16"
         >
           My Journey
         </motion.h2>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "120px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="h-[2px] bg-violet-500 mx-auto mb-12"
-        />
 
         <div
           ref={ref}
-          className="relative border-l border-white/10 pl-6 space-y-16"
+          className="relative border-l border-white/10 pl-6 space-y-16 text-left"
         >
           {timelineEvents.map((event, index) => (
             <motion.div
@@ -111,7 +105,7 @@ const Timeline = () => {
               className="relative pl-6"
             >
               <motion.div
-                className={`bg-white/5 border border-white/10 rounded-lg p-6 cursor-pointer transition-all duration-300 ${
+                className={`bg-white/5 border border-white/10 rounded-xl p-6 cursor-pointer transition-all duration-300 ${
                   selectedEvent === index
                     ? "border-violet-500"
                     : "hover:border-white/30"

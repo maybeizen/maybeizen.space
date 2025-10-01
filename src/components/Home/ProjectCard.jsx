@@ -6,11 +6,11 @@ const ProjectCard = ({ project, index, isSecondary = false }) => {
     project.liveLink || project.githubLink || project.modrinthLink;
 
   return (
-    <div className="bg-white/5 border border-white/10 p-6 rounded-md hover:border-violet-500 transition-colors">
+    <div className="bg-white/5 border border-white/10 p-6 rounded-xl hover:border-violet-500 transition-colors">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-xl font-medium">{project.name}</h3>
         {project.archived && (
-          <span className="px-2 py-1 text-xs bg-yellow-500/20 border border-yellow-500/30 rounded text-yellow-400">
+          <span className="px-2 py-1 text-xs bg-yellow-500/20 border border-yellow-500/30 rounded-xl text-yellow-400">
             Archived
           </span>
         )}
@@ -22,7 +22,7 @@ const ProjectCard = ({ project, index, isSecondary = false }) => {
         {project.technologies.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-1 bg-white/10 border border-white/10 rounded"
+            className="px-2 py-1 bg-white/10 border border-white/10 rounded-xl"
           >
             {tech}
           </span>

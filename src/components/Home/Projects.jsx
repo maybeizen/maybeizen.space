@@ -1,51 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { mainProjects, secondaryProjects } from "./projects-data";
-import CategoryFilters from "./CategoryFilters";
 import ProjectGrid from "./ProjectGrid";
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
   const [showMore, setShowMore] = useState(false);
   const [filteredMain, setFilteredMain] = useState(mainProjects);
   const [filteredSecondary, setFilteredSecondary] = useState(secondaryProjects);
 
-  const categories = ["All", "Backend", "Frontend"];
-
   useEffect(() => {
     let filtered = mainProjects;
 
-    // Apply category filter only
-    if (activeFilter !== "All") {
-      filtered = filtered.filter((p) => p.category === activeFilter);
-    }
-
     setFilteredMain(filtered);
 
-    // Apply same filter to secondary projects
     let filteredSecondary = secondaryProjects;
-    if (activeFilter !== "All") {
-      filteredSecondary = filteredSecondary.filter(
-        (p) => p.category === activeFilter
-      );
-    }
     setFilteredSecondary(filteredSecondary);
-  }, [activeFilter]);
+  }, []);
 
   return (
-    <section id="projects" className="bg-black text-white py-24 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
+    <section id="projects" className="bg-black text-white py-28 px-4">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-16">
           Projects
         </h2>
-        <div className="h-[2px] bg-violet-500 w-24 mx-auto mb-12"></div>
 
-        <CategoryFilters
-          categories={categories}
-          activeFilter={activeFilter}
-          setActiveFilter={setActiveFilter}
-        />
-
-        <ProjectGrid projects={filteredMain} />
+        <div className="text-left">
+          <ProjectGrid projects={filteredMain} />
+        </div>
 
         {filteredSecondary.length > 0 && (
           <>
@@ -59,7 +39,7 @@ const Projects = () => {
             </div>
 
             {showMore && (
-              <div className="mt-12">
+              <div className="mt-12 text-left">
                 <ProjectGrid projects={filteredSecondary} isSecondary={true} />
               </div>
             )}
