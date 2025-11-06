@@ -18,7 +18,7 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {experienceCards.map((card, idx) => (
             <div
               key={idx}
@@ -61,6 +61,58 @@ const Experience = () => {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+            Organizations & Competitions
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {organizationCards.map((card, idx) => (
+              <div
+                key={idx}
+                className="bg-white/5 border border-white/10 p-6 rounded-xl text-left"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded">
+                    <i className={`text-white text-lg ${card.icon}`}></i>
+                  </div>
+                  <h4 className="text-white text-lg font-medium">
+                    {card.title}
+                  </h4>
+                </div>
+                <p className="text-white/70 text-sm mb-4">{card.description}</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {card.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {card.links && (
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2">
+                      {card.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-1 text-xs bg-violet-500/20 border border-violet-500/30 rounded text-violet-300 hover:bg-violet-500/30 hover:border-violet-500/50 transition-colors"
+                        >
+                          {link.name}{" "}
+                          <i className="fa-solid fa-external-link-alt ml-1"></i>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -113,6 +165,39 @@ const experienceCards = [
     links: [
       { name: "Nether Host", url: "https://netherhost.cc" },
       { name: "BreezeNodes", url: "https://breezenodes.com" },
+    ],
+  },
+];
+
+const organizationCards = [
+  {
+    icon: "fa-solid fa-users",
+    title: "Business Professionals of America",
+    description:
+      "Active member of Business Professionals of America (BPA), the nation's leading Career Technical Student Organization for students pursuing careers in business management, information technology, and related fields.",
+    tags: [
+      "BPA Member",
+      "CTSO",
+      "Leadership",
+      "Professional Development",
+      "Networking",
+    ],
+    links: [{ name: "BPA", url: "https://bpa.org" }],
+  },
+  {
+    icon: "fa-solid fa-shield-halved",
+    title: "AFA CyberPatriot",
+    description:
+      "Competed in AFA CyberPatriot 17 and 18, the nation's largest youth cyber defense competition, showcasing cybersecurity skills and technical expertise in securing virtual networks.",
+    tags: [
+      "AFA CyberPatriot 17",
+      "AFA CyberPatriot 18",
+      "Cybersecurity",
+      "Competition",
+      "Network Defense",
+    ],
+    links: [
+      { name: "AFA CyberPatriot", url: "https://www.uscyberpatriot.org" },
     ],
   },
 ];

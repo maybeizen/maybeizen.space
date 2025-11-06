@@ -81,7 +81,7 @@ const cards = [
     title: "Gamer Life",
     description:
       "From building modpacks in Minecraft to sniping in Call of Duty.",
-    tags: ["Minecraft", "Call of Duty", "The Finals"],
+    tags: ["Satisfactory", "Call of Duty", "The Finals"],
   },
   {
     icon: "fa-solid fa-music",
