@@ -85,7 +85,7 @@ const ProfilePictureSwitcher = ({ currentImage, onImageChange }) => {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
           <div
             ref={modalRef}
             className="bg-[#fffbf0] border-4 border-black shadow-[12px_12px_0px_0px_#000000] w-full max-w-5xl max-h-[90vh] overflow-hidden"
