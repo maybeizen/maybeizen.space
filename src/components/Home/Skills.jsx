@@ -8,68 +8,62 @@ const Skills = () => {
     setExpandedSkill(expandedSkill === skillName ? null : skillName);
   };
 
-  const SkillItem = ({ skill }) => {
+  const SkillItem = ({ skill, bgColor }) => {
     const isExpanded = expandedSkill === skill.name;
 
     return (
-      <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20">
+      <div className={`${bgColor} border-4 border-black shadow-[8px_8px_0px_0px_#000000] transition-all hover:shadow-[12px_12px_0px_0px_#000000] hover:-translate-x-1 hover:-translate-y-1`}>
         <button
           onClick={() => toggleSkill(skill.name)}
-          className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+          className="w-full p-6 text-left flex items-center justify-between hover:opacity-90 transition-opacity"
         >
           <div className="flex items-center gap-4">
-            <img src={skill.icon} alt={skill.name} className="w-10 h-10" />
+            <div className="w-16 h-16 flex items-center justify-center bg-black border-4 border-black shadow-[4px_4px_0px_0px_#000000]">
+              <img src={skill.icon} alt={skill.name} className="w-10 h-10" />
+            </div>
             <div>
-              <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-              <p className="text-sm text-white/60">{skill.category}</p>
+              <h3 className="text-lg font-black uppercase">{skill.name}</h3>
+              <p className="text-sm font-bold">{skill.category}</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <div className="text-right">
-              <div className="text-sm font-medium text-white">
-                {skill.mastery}%
-              </div>
-              <div className="w-16 h-2 bg-white/10 rounded-full overflow-hidden">
+              <div className="text-lg font-black">{skill.mastery}%</div>
+              <div className="w-24 h-4 bg-black border-2 border-black overflow-hidden">
                 <div
-                  className="h-full bg-violet-500 transition-all duration-500"
+                  className="h-full bg-[#ffeb3b] transition-all duration-500"
                   style={{ width: `${skill.mastery}%` }}
                 />
               </div>
             </div>
-            <i
-              className={`fa-solid fa-chevron-down text-white/60 transition-transform duration-300 ${
-                isExpanded ? "rotate-180" : ""
-              }`}
-            ></i>
+            <div className={`w-8 h-8 flex items-center justify-center bg-black text-white border-2 border-black transition-transform ${isExpanded ? 'rotate-180' : ''}`}>
+              <i className="fa-solid fa-chevron-down"></i>
+            </div>
           </div>
         </button>
 
         {isExpanded && (
-          <div className="px-6 pb-6 border-t border-white/10">
+          <div className="px-6 pb-6 border-t-4 border-black">
             <div className="pt-6 space-y-4">
-              <p className="text-white/70 leading-relaxed">
+              <p className="font-bold leading-relaxed">
                 {skill.description}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="text-sm font-medium text-white/90 mb-2">
-                    Experience
-                  </h4>
-                  <p className="text-sm text-white/60">{skill.experience}</p>
+                  <h4 className="text-sm font-black uppercase mb-2">EXPERIENCE</h4>
+                  <p className="text-sm font-bold">{skill.experience}</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium text-white/90 mb-2">
-                    Mastery Level
-                  </h4>
+                  <h4 className="text-sm font-black uppercase mb-2">MASTERY LEVEL</h4>
                   <div className="flex items-center gap-2">
-                    <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="flex-1 h-4 bg-black border-2 border-black overflow-hidden">
                       <div
-                        className="h-full bg-violet-500 transition-all duration-500"
+                        className="h-full bg-[#ffeb3b] transition-all duration-500"
                         style={{ width: `${skill.mastery}%` }}
                       />
                     </div>
-                    <span className="text-sm text-white/60">
+                    <span className="text-sm font-black">
                       {skill.mastery}%
                     </span>
                   </div>
@@ -77,14 +71,12 @@ const Skills = () => {
               </div>
 
               <div>
-                <h4 className="text-sm font-medium text-white/90 mb-2">
-                  Projects
-                </h4>
+                <h4 className="text-sm font-black uppercase mb-2">PROJECTS</h4>
                 <div className="flex flex-wrap gap-2">
                   {skill.projects.map((project, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 text-xs bg-white/10 border border-white/10 rounded-xl text-white/60"
+                      className="neobrutal-tag"
                     >
                       {project}
                     </span>
@@ -103,7 +95,7 @@ const Skills = () => {
                       ? "noopener noreferrer"
                       : ""
                   }
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500/20 border border-violet-500/30 rounded-xl text-violet-300 hover:bg-violet-500/30 hover:border-violet-500/50 transition-colors"
+                  className="neobrutal-btn neobrutal-btn-blue text-sm inline-flex items-center gap-2"
                 >
                   {skill.actionText}
                   <i className="fa-solid fa-external-link-alt text-xs"></i>
@@ -116,37 +108,39 @@ const Skills = () => {
     );
   };
 
-  const SkillSection = ({ skills, title, subtitle }) => (
-    <div className="mb-16">
-      <h3 className="text-2xl md:text-3xl font-semibold text-center mb-2 text-white">
-        {title}
-      </h3>
-      <p className="text-white/60 text-center mb-8">{subtitle}</p>
-      <div className="space-y-4">
-        {skills.map((skill) => (
-          <SkillItem key={skill.name} skill={skill} />
-        ))}
+  const SkillSection = ({ skills, title, subtitle }) => {
+    const colors = ["bg-white", "bg-[#ffeb3b]", "bg-[#2196f3]", "bg-[#ff1744]", "bg-[#4caf50]", "bg-[#9c27b0]", "bg-white"];
+
+    return (
+      <div className="mb-16">
+        <h3 className="text-3xl md:text-4xl font-black uppercase text-center mb-4">
+          {title}
+        </h3>
+        <p className="font-bold text-center mb-8">{subtitle}</p>
+        <div className="space-y-4">
+          {skills.map((skill, idx) => (
+            <SkillItem key={skill.name} skill={skill} bgColor={colors[idx % colors.length]} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
-    <section id="skills" className="bg-black py-28 text-white px-4">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-16">
-          Tech Stack
-        </h2>
+    <section id="skills" className="bg-[#fffbf0] py-28 text-black px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="section-heading text-black">TECH STACK</h2>
 
         <div className="text-left">
           <SkillSection
             skills={backendSkills}
-            title="Backend Technologies"
+            title="BACKEND TECHNOLOGIES"
             subtitle="Server-side development, APIs, and database management"
           />
 
           <SkillSection
             skills={frontendSkills}
-            title="Frontend Technologies"
+            title="FRONTEND TECHNOLOGIES"
             subtitle="User interface development and client-side applications"
           />
         </div>

@@ -30,33 +30,16 @@ const ThemeSelector = () => {
 
   const currentThemeObj = themes[currentTheme];
 
-  const getThemePreviewColors = (themeId) => {
-    switch (themeId) {
-      case "light":
-        return ["#f5f5f5", "#1a1a1a", "#7c3aed"];
-      case "dark":
-        return ["#121212", "#ffffff", "#8b5cf6"];
-      case "anime":
-        return ["#2a1b3d", "#f6e58d", "#ff9ff3"];
-      case "cyberpunk":
-        return ["#0a0a18", "#f9ca24", "#00ff9f"];
-      case "terminal":
-        return ["#0c0c0c", "#00ff00", "#ffffff"];
-      default:
-        return ["#121212", "#ffffff", "#8b5cf6"];
-    }
-  };
-
   return (
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-2 px-3 py-2 text-sm rounded-md transition-colors bg-white/5 hover:bg-white/10"
+        className="neobrutal-btn neobrutal-btn-secondary flex items-center gap-2 px-4 py-2 text-sm"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         <i className={`fa-solid ${currentThemeObj.icon}`}></i>
-        <span>{currentThemeObj.name}</span>
+        <span className="uppercase">{currentThemeObj.name}</span>
         <i
           className={`fa-solid fa-chevron-${isOpen ? "up" : "down"} text-xs`}
         ></i>
@@ -69,40 +52,31 @@ const ThemeSelector = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-full mb-2 right-4 min-w-[200px] bg-zinc-900 border border-white/10 rounded-md shadow-lg z-50 py-2 overflow-hidden"
+            className="absolute bottom-full mb-2 right-0 min-w-[200px] bg-white border-4 border-black shadow-[8px_8px_0px_0px_#000000] z-50 py-2"
           >
             {Object.values(themes).map((theme) => {
               const isActive = currentTheme === theme.id;
-              const colors = getThemePreviewColors(theme.id);
 
               return (
                 <button
                   key={theme.id}
                   onClick={() => handleThemeChange(theme.id)}
-                  className={`w-full text-left px-4 py-2 text-sm flex items-center gap-3 transition-colors hover:bg-white/5 ${
-                    isActive ? "bg-white/10" : ""
+                  className={`w-full text-left px-4 py-3 text-sm flex items-center gap-3 transition-all hover:bg-[#ffeb3b] font-bold uppercase ${
+                    isActive ? "bg-[#ffeb3b]" : ""
                   }`}
                 >
-                  <div
-                    className="w-5 h-5 rounded-full flex items-center justify-center border border-white/20 overflow-hidden"
-                    style={{ backgroundColor: colors[0] }}
-                  >
-                    <div
-                      className="w-2.5 h-2.5 rounded-full"
-                      style={{ backgroundColor: colors[2] }}
-                    ></div>
-                  </div>
+                  <i className={`fa-solid ${theme.icon}`}></i>
                   <span>{theme.name}</span>
                   {isActive && (
-                    <i className="fa-solid fa-check ml-auto text-violet-400"></i>
+                    <i className="fa-solid fa-check ml-auto"></i>
                   )}
                 </button>
               );
             })}
 
-            <div className="border-t border-white/10 mt-2 pt-2 px-4">
-              <p className="text-xs text-white/40 italic">
-                Current: {themes[effectiveTheme].name}
+            <div className="border-t-4 border-black mt-2 pt-2 px-4">
+              <p className="text-xs font-bold uppercase italic">
+                CURRENT: {themes[effectiveTheme].name}
               </p>
             </div>
           </motion.div>

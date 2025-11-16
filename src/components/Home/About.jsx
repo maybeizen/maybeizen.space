@@ -1,49 +1,63 @@
 import React from "react";
 
 const About = () => {
-  return (
-    <section id="about" className="bg-black py-28 text-white px-4">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-16">
-          About Me
-        </h2>
+  const cardColors = [
+    "bg-white",
+    "bg-[#ffeb3b]",
+    "bg-[#2196f3]",
+    "bg-[#ff1744]",
+    "bg-[#4caf50]",
+    "bg-[#9c27b0]",
+  ];
 
-        <div className="space-y-6 text-base leading-relaxed max-w-3xl mx-auto mb-16">
-          <p>
-            Hey, I'm maybeizen — a backend developer, musician, and anime
-            enthusiast. I've found that the rhythm of coding and the rhythm of
-            music share something beautiful: both require precision, creativity,
-            and the ability to build something greater than the sum of their
-            parts.
-          </p>
-          <p>
-            When I'm not behind the drum kit or diving deep into anime worlds,
-            I'm crafting robust backend systems that power the web. Every
-            project feels like composing a new song — finding the right tempo,
-            building the perfect structure, and making sure every component
-            works in harmony.
-          </p>
+  return (
+    <section id="about" className="bg-[#fffbf0] py-28 text-black px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="section-heading text-black">ABOUT ME</h2>
+
+        <div className="space-y-6 text-lg font-bold leading-relaxed max-w-3xl mx-auto mb-20">
+          <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] text-left">
+            <p>
+              HEY, I'M MAYBEIZEN — A BACKEND DEVELOPER, MUSICIAN, AND ANIME
+              ENTHUSIAST. I'VE FOUND THAT THE RHYTHM OF CODING AND THE RHYTHM OF
+              MUSIC SHARE SOMETHING BEAUTIFUL: BOTH REQUIRE PRECISION,
+              CREATIVITY, AND THE ABILITY TO BUILD SOMETHING GREATER THAN THE
+              SUM OF THEIR PARTS.
+            </p>
+          </div>
+          <div className="bg-[#ffeb3b] border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] text-left">
+            <p>
+              WHEN I'M NOT BEHIND THE DRUM KIT OR DIVING DEEP INTO ANIME WORLDS,
+              I'M CRAFTING ROBUST BACKEND SYSTEMS THAT POWER THE WEB. EVERY
+              PROJECT FEELS LIKE COMPOSING A NEW SONG — FINDING THE RIGHT TEMPO,
+              BUILDING THE PERFECT STRUCTURE, AND MAKING SURE EVERY COMPONENT
+              WORKS IN HARMONY.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="bg-white/5 border border-white/10 p-6 rounded-xl text-left"
+              className={`${
+                cardColors[idx % cardColors.length]
+              } border-4 border-black p-6 shadow-[8px_8px_0px_0px_#000000] text-left transition-all hover:shadow-[12px_12px_0px_0px_#000000] hover:-translate-x-1 hover:-translate-y-1`}
             >
               <div className="mb-4 flex items-center gap-3">
-                <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded">
-                  <i className={`text-white text-lg ${card.icon}`}></i>
+                <div className="w-12 h-12 flex items-center justify-center bg-black text-white border-4 border-black shadow-[4px_4px_0px_0px_#000000]">
+                  <i className={`text-lg ${card.icon}`}></i>
                 </div>
-                <h4 className="text-white text-lg font-medium">{card.title}</h4>
+                <h4 className="text-black text-xl font-black uppercase">
+                  {card.title}
+                </h4>
               </div>
-              <p className="text-white/70 text-sm mb-4">{card.description}</p>
-              <div className="flex flex-wrap gap-2 mt-2">
+              <p className="text-black font-bold text-sm mb-4 leading-relaxed">
+                {card.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
                 {card.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 text-xs bg-white/5 border border-white/10 rounded text-white/60"
-                  >
+                  <span key={i} className="neobrutal-tag">
                     {tag}
                   </span>
                 ))}

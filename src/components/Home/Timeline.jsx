@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const timelineEvents = [
   {
@@ -69,7 +68,6 @@ const timelineEvents = [
 ];
 
 const Timeline = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const handleEventClick = (index) => {
@@ -80,113 +78,98 @@ const Timeline = () => {
     }
   };
 
+  const colors = [
+    "bg-[#ffeb3b]",
+    "bg-[#2196f3]",
+    "bg-[#ff1744]",
+    "bg-[#4caf50]",
+    "bg-[#9c27b0]",
+    "bg-white",
+    "bg-[#ffeb3b]",
+  ];
+
   return (
-    <section id="timeline" className="bg-black py-28 text-white px-4">
-      <div className="max-w-5xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-semibold tracking-tight mb-16"
-        >
-          My Journey
-        </motion.h2>
+    <section id="timeline" className="bg-[#fffbf0] py-28 text-black px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="section-heading text-black">MY JOURNEY</h2>
 
-        <div
-          ref={ref}
-          className="relative border-l border-white/10 pl-6 space-y-16 text-left"
-        >
-          {timelineEvents.map((event, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative pl-6"
-            >
+        <div className="relative space-y-8 text-left">
+          {timelineEvents.map((event, index) => {
+            const isExpanded = selectedEvent === index;
+            const bgColor = colors[index % colors.length];
+
+            return (
               <motion.div
-                className={`bg-white/5 border border-white/10 rounded-xl p-6 cursor-pointer transition-all duration-300 ${
-                  selectedEvent === index
-                    ? "border-violet-500"
-                    : "hover:border-white/30"
-                }`}
-                onClick={() => handleEventClick(index)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="relative"
               >
-                <div className="flex items-center gap-4 mb-2">
-                  <motion.div
-                    className="w-10 h-10 flex items-center justify-center bg-violet-500 rounded text-black"
-                    whileHover={{
-                      rotate: [0, -10, 10, -5, 5, 0],
-                      transition: { duration: 0.5 },
-                    }}
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className={`w-16 h-16 flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_#000000] ${bgColor}`}>
+                      <i className={`${event.icon} text-xl`}></i>
+                    </div>
+                  </div>
+                  <div
+                    className={`flex-1 ${bgColor} border-4 border-black p-6 shadow-[8px_8px_0px_0px_#000000] transition-all cursor-pointer hover:shadow-[12px_12px_0px_0px_#000000] hover:-translate-x-1 hover:-translate-y-1`}
+                    onClick={() => handleEventClick(index)}
                   >
-                    <i className={`${event.icon} text-lg`}></i>
-                  </motion.div>
-                  <span className="text-sm text-violet-400 font-medium">
-                    {event.year}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {event.description}
-                </p>
+                    <div className="flex items-center gap-4 mb-2">
+                      <span className="text-sm font-black uppercase bg-black text-white px-3 py-1 border-4 border-black shadow-[3px_3px_0px_0px_#000000]">
+                        {event.year}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-black uppercase mb-2">{event.title}</h3>
+                    <p className="font-bold text-sm leading-relaxed mb-3">
+                      {event.description}
+                    </p>
 
-                <AnimatePresence>
-                  {selectedEvent === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-4 pt-4 border-t border-white/10"
-                    >
-                      <p className=" text-sm leading-relaxed">
-                        {event.details}
-                      </p>
-                      <div className="flex justify-end mt-3">
-                        <span className="text-xs text-violet-400 italic">
-                          Click to collapse
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="mt-4 pt-4 border-t-4 border-black"
+                        >
+                          <p className="font-bold text-sm leading-relaxed mb-3">
+                            {event.details}
+                          </p>
+                          <div className="flex justify-end">
+                            <span className="text-xs font-black uppercase bg-black text-white px-2 py-1 border-2 border-black">
+                              CLICK TO COLLAPSE
+                            </span>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {!isExpanded && (
+                      <div className="mt-3 text-xs font-black uppercase">
+                        <span className="bg-black text-white px-2 py-1 border-2 border-black">
+                          CLICK TO EXPAND
                         </span>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {selectedEvent !== index && (
-                  <motion.div
-                    className="mt-3 text-xs text-violet-400 flex items-center gap-1"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <span>Click to expand</span>
-                    <i className="fa-solid fa-chevron-down text-[10px]"></i>
-                  </motion.div>
-                )}
+                    )}
+                  </div>
+                </div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{
-            duration: 0.5,
-            delay: timelineEvents.length * 0.2 + 0.3,
-          }}
-          className="mt-20 text-center"
-        >
+        <div className="mt-20 text-center">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-sm px-6 py-2 border border-violet-500 text-violet-400 hover:bg-violet-500 hover:text-black transition-all interactive"
+            className="neobrutal-btn neobrutal-btn-pink inline-flex items-center gap-2"
           >
-            <span>See My Work</span>
+            <span>SEE MY WORK</span>
             <i className="fa-solid fa-arrow-right"></i>
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

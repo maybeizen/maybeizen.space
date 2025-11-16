@@ -9,7 +9,7 @@ import Projects from "../components/Home/Projects";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-[#fffbf0] text-black overflow-x-hidden relative">
       <div className="relative z-10">
         <Hero />
         <About />

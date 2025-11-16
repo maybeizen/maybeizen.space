@@ -9,7 +9,6 @@ const Projects = () => {
 
   useEffect(() => {
     let filtered = mainProjects;
-
     setFilteredMain(filtered);
 
     let filteredSecondary = secondaryProjects;
@@ -17,11 +16,9 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="bg-black text-white py-28 px-4">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-16">
-          Projects
-        </h2>
+    <section id="projects" className="bg-[#fffbf0] text-black py-28 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="section-heading text-black">PROJECTS</h2>
 
         <div className="text-left">
           <ProjectGrid projects={filteredMain} />
@@ -32,9 +29,9 @@ const Projects = () => {
             <div className="text-center mt-16">
               <button
                 onClick={() => setShowMore(!showMore)}
-                className="px-6 py-2 rounded-sm border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-colors"
+                className="neobrutal-btn neobrutal-btn-secondary"
               >
-                {showMore ? "Show Less" : "See More"}
+                {showMore ? "SHOW LESS" : "SEE MORE"}
               </button>
             </div>
 
