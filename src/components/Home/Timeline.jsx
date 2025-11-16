@@ -57,13 +57,22 @@ const timelineEvents = [
       "After building many projects, I needed a central place to showcase my work. Creating this portfolio site gave me a platform to share my journey and connect with other developers. I started writing technical blogs to document what I've learned and contribute to the developer community.",
   },
   {
-    year: "Present",
+    year: "Late 2025",
     title: "Systems Programming & Beyond",
     description:
       "Diving into Go, Rust, and C. Exploring low-level systems, performance, and memory management.",
     icon: "fa-solid fa-microchip",
     details:
       "My current focus is on lower-level programming to better understand what happens beneath the abstractions. Learning Rust has been particularly eye-opening for concepts like ownership and memory safety without garbage collection. I'm also exploring OS development concepts and working on small systems programming projects to push my boundaries.",
+  },
+  {
+    year: null,
+    title: "...then I turned 16",
+    description:
+      "I'm only 16 years old and I've gotten myself this far. I'm completely self-taught.",
+    icon: "fa-solid fa-fire",
+    details:
+      "No bootcamps. No degree. Just pure passion, countless hours of practice, and the refusal to quit when things get tough. Every line of code, every project, every breakthrough—all learned through trial, error, and sheer determination. At 16, I've built production apps, worked with real clients, and continue to push my boundaries every single day.",
   },
 ];
 
@@ -86,6 +95,7 @@ const Timeline = () => {
     "bg-[#9c27b0]",
     "bg-white",
     "bg-[#ffeb3b]",
+    "bg-[#ff1744]",
   ];
 
   return (
@@ -108,20 +118,26 @@ const Timeline = () => {
               >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className={`w-16 h-16 flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_#000000] ${bgColor}`}>
+                    <div
+                      className={`w-16 h-16 flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_#000000] ${bgColor}`}
+                    >
                       <i className={`${event.icon} text-xl`}></i>
                     </div>
                   </div>
                   <div
-                    className={`flex-1 ${bgColor} border-4 border-black p-6 shadow-[8px_8px_0px_0px_#000000] transition-all cursor-pointer hover:shadow-[12px_12px_0px_0px_#000000] hover:-translate-x-1 hover:-translate-y-1`}
+                    className={`flex-1 ${bgColor} text-black border-4 border-black p-6 shadow-[8px_8px_0px_0px_#000000] transition-all cursor-pointer hover:shadow-[12px_12px_0px_0px_#000000] hover:-translate-x-1 hover:-translate-y-1`}
                     onClick={() => handleEventClick(index)}
                   >
                     <div className="flex items-center gap-4 mb-2">
-                      <span className="text-sm font-black uppercase bg-black text-white px-3 py-1 border-4 border-black shadow-[3px_3px_0px_0px_#000000]">
-                        {event.year}
-                      </span>
+                      {event.year && (
+                        <span className="text-sm font-black uppercase bg-black text-white px-3 py-1 border-4 border-black shadow-[3px_3px_0px_0px_#000000]">
+                          {event.year}
+                        </span>
+                      )}
                     </div>
-                    <h3 className="text-xl font-black uppercase mb-2">{event.title}</h3>
+                    <h3 className="text-xl font-black uppercase mb-2">
+                      {event.title}
+                    </h3>
                     <p className="font-bold text-sm leading-relaxed mb-3">
                       {event.description}
                     </p>
