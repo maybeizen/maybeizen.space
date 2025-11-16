@@ -67,9 +67,9 @@ const timelineEvents = [
   },
   {
     year: null,
-    title: "...then I turned 16",
+    title: "...and I'm not even 16 years old...",
     description:
-      "I'm only 16 years old and I've gotten myself this far. I'm completely self-taught.",
+      "I'm not even 16 years old and I've gotten myself this far. I'm completely self-taught.",
     icon: "fa-solid fa-fire",
     details:
       "No bootcamps. No degree. Just pure passion, countless hours of practice, and the refusal to quit when things get tough. Every line of code, every project, every breakthrough—all learned through trial, error, and sheer determination. At 16, I've built production apps, worked with real clients, and continue to push my boundaries every single day.",
