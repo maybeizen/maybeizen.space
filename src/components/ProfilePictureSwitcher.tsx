@@ -61,7 +61,7 @@ const ProfilePictureSwitcher = ({
 
   const handleSave = async () => {
     setIsSaving(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    await new Promise((resolve) => setTimeout(resolve, 500));
     onImageChange(selectedImage);
     localStorage.setItem("selectedProfilePicture", selectedImage);
     setIsSaving(false);
@@ -83,119 +83,124 @@ const ProfilePictureSwitcher = ({
         className="relative cursor-pointer group"
         onClick={() => setIsOpen(true)}
       >
-        <img
-          src={currentImage}
-          alt="Profile"
-          className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-[#1a1a1a] hover:border-blue-400 transition-all duration-200 ring-4 ring-[#1a1a1a] hover:ring-blue-400/20"
-        />
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center rounded-lg">
-          <div className="bg-[#1a1a1a] p-3 rounded-lg border border-blue-400/30">
-            <i className="fa-solid fa-pen-to-square text-xl text-blue-400"></i>
+        <div className="relative">
+          <img
+            src={currentImage}
+            alt="Profile"
+            className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-[#1a1a1a] transition-all duration-200 group-hover:border-blue-400"
+          />
+          <div className="absolute inset-0 bg-blue-400/0 group-hover:bg-blue-400/10 rounded-full transition-all duration-200 flex items-center justify-center">
+            <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="w-10 h-10 flex items-center justify-center bg-[#1a1a1a] rounded-full border border-blue-400/30">
+                <i className="fa-solid fa-pen-to-square text-sm text-blue-400"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
           <div
             ref={modalRef}
-            className="bg-[#0a0a0a] border border-[#1a1a1a] rounded w-full max-w-5xl max-h-[90vh] overflow-hidden"
+            className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col"
           >
-            <div className="p-6 border-b border-[#1a1a1a] flex items-center justify-between bg-[#1a1a1a]">
-              <h2 className="text-xl font-semibold">Choose Profile Picture</h2>
+            <div className="p-6 border-b border-[#1a1a1a] flex items-center justify-between">
+              <h2 className="text-xl font-semibold">Select Profile Picture</h2>
               <button
                 onClick={handleCancel}
-                className="w-10 h-10 flex items-center justify-center text-[#a0a0a0] hover:text-blue-400 transition-colors"
+                className="w-8 h-8 flex items-center justify-center text-[#a0a0a0] hover:text-blue-400 transition-colors rounded-lg hover:bg-[#1a1a1a]"
               >
-                <i className="fa-solid fa-xmark text-lg"></i>
+                <i className="fa-solid fa-xmark"></i>
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
-              <div className="mb-6 p-4 bg-[#1a1a1a] border border-blue-400/20 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={selectedImage}
-                    alt="Selected"
-                    className="w-16 h-16 object-cover rounded-lg border border-blue-400/30"
-                  />
-                  <div>
-                    <p className="font-semibold text-left">
-                      {
-                        profilePictures.find(
-                          (pic) => pic.image === selectedImage
-                        )?.name
-                      }
-                    </p>
-                    <p className="text-sm text-[#a0a0a0]">
-                      {
-                        profilePictures.find(
-                          (pic) => pic.image === selectedImage
-                        )?.anime
-                      }
-                    </p>
-                  </div>
+            <div className="p-6 overflow-y-auto flex-1">
+              <div className="mb-6 flex items-center gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-blue-400/20">
+                <img
+                  src={selectedImage}
+                  alt="Selected"
+                  className="w-16 h-16 object-cover rounded-full border-2 border-blue-400"
+                />
+                <div>
+                  <p className="font-semibold text-[#e5e5e5] text-left">
+                    {
+                      profilePictures.find((pic) => pic.image === selectedImage)
+                        ?.name
+                    }
+                  </p>
+                  <p className="text-sm text-[#a0a0a0]">
+                    {
+                      profilePictures.find((pic) => pic.image === selectedImage)
+                        ?.anime
+                    }
+                  </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {profilePictures.map((picture) => (
-                  <div
-                    key={picture.id}
-                    className="cursor-pointer group"
-                    onClick={() => handleImageSelect(picture)}
-                  >
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
+                {profilePictures.map((picture) => {
+                  const isSelected = picture.image === selectedImage;
+                  return (
                     <div
-                      className={`relative border rounded-lg mb-3 transition-all ${
-                        picture.image === selectedImage
-                          ? "border-blue-400 bg-blue-400/10"
-                          : "border-[#1a1a1a] bg-[#1a1a1a] hover:border-blue-400/30"
-                      }`}
+                      key={picture.id}
+                      className="cursor-pointer group"
+                      onClick={() => handleImageSelect(picture)}
                     >
-                      <img
-                        src={picture.image}
-                        alt={picture.name}
-                        className="w-full aspect-square object-cover rounded-lg"
-                      />
-
-                      {picture.image === selectedImage && (
-                        <div className="absolute top-2 right-2 w-6 h-6 bg-blue-400 text-[#0a0a0a] rounded-full flex items-center justify-center">
-                          <i className="fa-solid fa-check text-xs"></i>
-                        </div>
-                      )}
+                      <div
+                        className={`relative rounded-lg overflow-hidden border-2 transition-all mb-2 ${
+                          isSelected
+                            ? "border-blue-400 ring-2 ring-blue-400/20"
+                            : "border-[#1a1a1a] hover:border-blue-400/50"
+                        }`}
+                      >
+                        <img
+                          src={picture.image}
+                          alt={picture.name}
+                          className="w-full aspect-square object-cover"
+                        />
+                        {isSelected && (
+                          <div className="absolute inset-0 bg-blue-400/20 flex items-center justify-center">
+                            <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center">
+                              <i className="fa-solid fa-check text-xs text-[#0a0a0a]"></i>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs font-medium text-[#e5e5e5]">
+                          {picture.name}
+                        </p>
+                        <p className="text-xs text-[#a0a0a0] leading-tight mt-0.5">
+                          {picture.anime}
+                        </p>
+                      </div>
                     </div>
-
-                    <div className="text-center space-y-1">
-                      <p className="font-medium text-sm">{picture.name}</p>
-                      <p className="text-xs text-[#a0a0a0] leading-tight">
-                        {picture.anime}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             <div className="p-6 border-t border-[#1a1a1a] flex items-center justify-end gap-3 bg-[#1a1a1a]">
               <button
                 onClick={handleCancel}
-                className="px-4 py-2 border border-[#1a1a1a] text-[#e5e5e5] font-medium rounded-lg hover:border-blue-400 transition-colors"
+                className="px-4 py-2 border border-[#1a1a1a] text-[#e5e5e5] font-medium rounded-lg text-sm hover:border-blue-400 hover:text-blue-400 transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSave}
                 disabled={isSaving}
-                className="px-4 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-4 py-2 bg-blue-500 text-white font-medium rounded-lg text-sm hover:bg-blue-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {isSaving ? (
                   <>
-                    <i className="fa-solid fa-spinner-third fa-spin text-sm"></i>
+                    <i className="fa-solid fa-spinner-third fa-spin text-xs"></i>
                     Saving...
                   </>
                 ) : (
                   <>
-                    <i className="fa-solid fa-check text-sm"></i>
+                    <i className="fa-solid fa-check text-xs"></i>
                     Save
                   </>
                 )}
