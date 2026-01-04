@@ -1,4 +1,5 @@
 import { Project } from "../../data/projects";
+import { ButtonLink } from "../ui";
 
 interface ProjectCardProps {
   project: Project;
@@ -6,9 +7,18 @@ interface ProjectCardProps {
   isSecondary?: boolean;
 }
 
-const ProjectCard = ({ project, index, isSecondary = false }: ProjectCardProps) => {
-  const projectLink =
-    project.liveLink || project.githubLink || project.modrinthLink;
+const ProjectCard = ({ project }: ProjectCardProps) => {
+  const links = [];
+  if (project.liveLink)
+    links.push({ type: "live", url: project.liveLink, label: "Visit Site" });
+  if (project.githubLink)
+    links.push({ type: "github", url: project.githubLink, label: "GitHub" });
+  if (project.modrinthLink)
+    links.push({
+      type: "modrinth",
+      url: project.modrinthLink,
+      label: "Modrinth",
+    });
 
   return (
     <div className="bg-[#1a1a1a] border border-[#1a1a1a] p-6 rounded-lg hover:border-blue-400/30 transition-colors h-full flex flex-col">
@@ -38,16 +48,26 @@ const ProjectCard = ({ project, index, isSecondary = false }: ProjectCardProps) 
         </div>
       </div>
 
-      {projectLink && (
-        <a
-          href={projectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white font-medium rounded-lg text-sm hover:bg-blue-400 transition-colors mt-auto"
-        >
-          {project.liveLink ? "Visit Site" : "View Project"}
-          <i className="fa-solid fa-external-link-alt text-xs"></i>
-        </a>
+      {links.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {links.map((link, i) => (
+            <ButtonLink
+              key={i}
+              variant="default"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              {link.type === "github" && (
+                <i className="fa-brands fa-github"></i>
+              )}
+              {link.type === "modrinth" && <i className="fa-solid fa-cube"></i>}
+              {link.label}
+              <i className="fa-solid fa-external-link-alt text-xs"></i>
+            </ButtonLink>
+          ))}
+        </div>
       )}
     </div>
   );
