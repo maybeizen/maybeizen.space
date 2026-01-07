@@ -8,42 +8,42 @@ export interface AboutCard {
 export const aboutCards: AboutCard[] = [
   {
     icon: "fa-solid fa-code",
-    title: "Full-stack Development",
+    title: "Full-Stack",
     description:
-      "Building robust full-stack systems and APIs with clean, scalable architecture.",
+      "Building full-stack systems and APIs with scalable architecture.",
     tags: ["Express.js", "Next.js", "PostgreSQL"],
   },
   {
     icon: "fa-solid fa-tv",
-    title: "Anime Fan",
-    description: "Inspired by stories like Darling in the Franxx and Horimiya.",
+    title: "Anime",
+    description: "In love with stories like Darling in the FranXX.",
     tags: ["DarliFra", "Bocchi the Rock!", "Tsuki ga kirei"],
   },
   {
     icon: "fa-solid fa-database",
-    title: "System Architecture",
-    description: "Designing scalable backend systems and database structures.",
+    title: "Systems",
+    description: "Exploring database structures, protection, and replication.",
     tags: ["MySQL", "MongoDB", "Docker"],
   },
   {
     icon: "fa-solid fa-gamepad",
-    title: "Gamer Life",
+    title: "Games",
     description:
-      "From building modpacks in Minecraft to sniping in Call of Duty.",
-    tags: ["Satisfactory", "Call of Duty", "The Finals"],
+      "Building spaghetti conveyors and losing Quick Cash games.",
+    tags: ["Satisfactory", "Minecraft", "The Finals"],
   },
   {
     icon: "fa-solid fa-music",
-    title: "Music & Code",
+    title: "Music",
     description:
-      "Drummer and coding enthusiast — always coding to a soundtrack. Music fuels the creative flow.",
+      "Drummer and dad rock enthusiast. Always listening to music.",
     tags: ["Linkin Park", "Deftones", "irvi", "PVRIS"],
   },
   {
     icon: "fa-solid fa-graduation-cap",
     title: "Always Learning",
     description:
-      "Exploring new backend technologies and ways to grow every day.",
-    tags: ["GoLang", "C", "APIs"],
+      "Exploring new technologies and software every day.",
+    tags: ["GoLang", "C", "Rust"],
   },
 ];
