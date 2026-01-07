@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight">
-              <span className="text-[#e5e5e5]">maybeizen</span>
+              <span className="text-[#e5e5e5]">Briar (maybeizen)</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-[#a0a0a0] font-light leading-relaxed">
