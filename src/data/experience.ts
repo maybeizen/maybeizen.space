@@ -74,9 +74,8 @@ export const organizationCards: ExperienceCard[] = [
     icon: "fa-solid fa-shield-halved",
     title: "AFA CyberPatriot",
     description:
-      "Competed in AFA CyberPatriot 17 and 18, the nation's largest youth cyber defense competition, showcasing cybersecurity skills and technical expertise in securing virtual networks.",
+      "Competed in AFA CyberPatriot 18, the nation's largest youth cyber defense competition, showcasing cybersecurity skills and technical expertise in securing virtual networks.",
     tags: [
-      "AFA CyberPatriot 17",
       "AFA CyberPatriot 18",
       "Cybersecurity",
       "Competition",
