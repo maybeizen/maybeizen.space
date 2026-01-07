@@ -11,15 +11,13 @@ export const experienceCards: ExperienceCard[] = [
     icon: "fa-brands fa-linux",
     title: "Linux Systems",
     description:
-      "Extensive experience with Linux administration and server management across various hosting environments and distributions. Proficient in system optimization, automation, and infrastructure scaling.",
+      "Extensive experience with Linux administration and server management across various hosting environments and distributions. Proficient in automation and infrastructure scaling.",
     tags: [
       "Ubuntu",
-      "CentOS",
       "Debian",
       "Docker",
       "Systemd",
-      "Bash Scripting",
-      "Server Hardening",
+      "GRUB",
     ],
   },
   {
@@ -39,14 +37,12 @@ export const experienceCards: ExperienceCard[] = [
     icon: "fa-solid fa-server",
     title: "Game Hosting Industry",
     description:
-      "Former COO of Nether Host (100,000+ users), founder of Orvex, and developing BreezeNodes. Deep expertise in game hosting infrastructure, server optimization, and business operations.",
+      "Former COO of Nether Host (100,000+ users) and working with BreezeNodes. Experience in game hosting infrastructure and business operations.",
     tags: [
       "Nether Host",
-      "Orvex",
       "BreezeNodes",
-      "Server Optimization",
       "Pterodactyl Panel",
-      "Infrastructure",
+      "WHMCompleteSolution",
     ],
     links: [
       { name: "Nether Host", url: "https://netherhost.cc" },
@@ -62,7 +58,7 @@ export const organizationCards: ExperienceCard[] = [
     description:
       "Active member of Business Professionals of America (BPA), the nation's leading Career Technical Student Organization for students pursuing careers in business management, information technology, and related fields.",
     tags: [
-      "BPA Member",
+      "BPA",
       "CTSO",
       "Leadership",
       "Professional Development",
