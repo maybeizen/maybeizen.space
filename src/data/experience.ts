@@ -12,13 +12,7 @@ export const experienceCards: ExperienceCard[] = [
     title: "Linux Systems",
     description:
       "Extensive experience with Linux administration and server management across various hosting environments and distributions. Proficient in automation and infrastructure scaling.",
-    tags: [
-      "Ubuntu",
-      "Debian",
-      "Docker",
-      "Systemd",
-      "GRUB",
-    ],
+    tags: ["Ubuntu", "Debian", "Docker", "Systemd", "GRUB"],
   },
   {
     icon: "fa-solid fa-tools",
@@ -37,7 +31,7 @@ export const experienceCards: ExperienceCard[] = [
     icon: "fa-solid fa-server",
     title: "Game Hosting Industry",
     description:
-      "Former COO of Nether Host (100,000+ users) and working with BreezeNodes. Experience in game hosting infrastructure and business operations.",
+      "Admin of Nether Host (100,000+ users) and working with BreezeNodes. Experience in game hosting infrastructure and business operations.",
     tags: [
       "Nether Host",
       "BreezeNodes",
