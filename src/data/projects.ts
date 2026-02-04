@@ -20,6 +20,15 @@ export const mainProjects: Project[] = [
     archived: false,
   },
   {
+    name: "Fluxo",
+    description:
+      "A modern, open-source billing panel targeted at hosting providers.",
+    technologies: ["React", "Tailwind CSS", "Typescript", "PostgreSQL"],
+    category: "Backend",
+    archived: false,
+    githubLink: "https://github.com/maybeizen/fluxo",
+  },
+  {
     name: "EasyTPA",
     description: "Simple, powerful teleport requests for Minecraft servers",
     technologies: ["Java", "Fabric", "Gradle", "PaperMC"],
