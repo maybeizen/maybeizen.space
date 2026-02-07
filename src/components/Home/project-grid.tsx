@@ -1,5 +1,5 @@
 import { Project } from "../../data/projects";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./project-card";
 
 interface ProjectGridProps {
   projects: Project[];
@@ -7,7 +7,11 @@ interface ProjectGridProps {
   className?: string;
 }
 
-const ProjectGrid = ({ projects, isSecondary = false, className = "" }: ProjectGridProps) => {
+const ProjectGrid = ({
+  projects,
+  isSecondary = false,
+  className = "",
+}: ProjectGridProps) => {
   return (
     <div
       className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${className}`}

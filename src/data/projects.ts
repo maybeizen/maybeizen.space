@@ -13,7 +13,7 @@ export const mainProjects: Project[] = [
   {
     name: "Portfolio",
     description: "This very portfolio site, built with React and Tailwind.",
-    technologies: ["React", "Tailwind CSS", "Typescript"],
+    technologies: ["React", "Tailwind CSS", "TypeScript"],
     githubLink: "https://github.com/maybeizen/maybeizen.space",
     liveLink: "https://maybeizen.space",
     category: "Frontend",
@@ -23,7 +23,7 @@ export const mainProjects: Project[] = [
     name: "Fluxo",
     description:
       "A modern, open-source billing panel targeted at hosting providers.",
-    technologies: ["React", "Tailwind CSS", "Typescript", "PostgreSQL"],
+    technologies: ["React", "Tailwind CSS", "TypeScript", "PostgreSQL"],
     category: "Backend",
     archived: false,
     githubLink: "https://github.com/maybeizen/fluxo",
@@ -40,10 +40,10 @@ export const mainProjects: Project[] = [
   {
     name: "Performium",
     description:
-      "Performance-oriented Minecraft modpack with 200,000+ downloads.",
+      "Performance-oriented Minecraft modpack with 250,000+ downloads.",
     technologies: ["Java", "Fabric"],
     modrinthLink: "https://modrinth.com/modpack/performium-was-taken",
-    githubLink: "https://github.com/Membercat-Studios",
+    githubLink: "https://github.com/Membercat-Studios/performium",
     category: "Backend",
     archived: false,
   },
@@ -53,7 +53,7 @@ export const secondaryProjects: Project[] = [
   {
     name: "DriftLabs",
     description: "Developer utilities made easy.",
-    technologies: ["Typescript", "MongoDB", "React", "GoLang"],
+    technologies: ["TypeScript", "MongoDB", "React", "GoLang"],
     liveLink: "https://driftlabs.dev",
     category: "Backend",
     archived: true,
@@ -71,7 +71,7 @@ export const secondaryProjects: Project[] = [
   {
     name: "NuboDB",
     description: "A straightfoward document-based local storage solution.",
-    technologies: ["Typescript", "Node.js", "BSON"],
+    technologies: ["TypeScript", "Node.js", "BSON"],
     githubLink: "https://github.com/maybeizen/nubodb",
     category: "Backend",
     archived: true,
