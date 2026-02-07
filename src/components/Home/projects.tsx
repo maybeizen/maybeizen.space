@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { mainProjects, secondaryProjects, Project } from "../../data/projects";
-import ProjectGrid from "./ProjectGrid";
+import ProjectGrid from "./project-grid";
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
   const [filteredMain, setFilteredMain] = useState<Project[]>(mainProjects);
-  const [filteredSecondary, setFilteredSecondary] = useState<Project[]>(secondaryProjects);
+  const [filteredSecondary, setFilteredSecondary] =
+    useState<Project[]>(secondaryProjects);
 
   useEffect(() => {
     setFilteredMain(mainProjects);

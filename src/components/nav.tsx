@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { navItems } from "../../data/navbar";
+import { navItems } from "../data/navbar";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

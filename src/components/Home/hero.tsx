@@ -1,11 +1,7 @@
-import { useState } from "react";
-import ProfilePictureSwitcher from "../ProfilePictureSwitcher";
-import ButtonLink from "../ui/ButtonLink";
+import ButtonLink from "../ui/link-button";
 
 const Hero = () => {
-  const [currentProfilePic, setCurrentProfilePic] = useState(
-    "/images/pfp/akane.jpg"
-  );
+  const currentProfilePic = "/images/pfp/zerotwo.jpg";
 
   return (
     <section
@@ -17,9 +13,10 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-blue-500/10 blur-2xl rounded-full"></div>
             <div className="relative">
-              <ProfilePictureSwitcher
-                currentImage={currentProfilePic}
-                onImageChange={setCurrentProfilePic}
+              <img
+                src={currentProfilePic}
+                alt="Profile"
+                className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-[#1a1a1a] transition-all duration-200 group-hover:border-blue-400"
               />
             </div>
           </div>

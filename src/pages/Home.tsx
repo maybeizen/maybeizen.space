@@ -1,11 +1,11 @@
-import Footer from "../components/Footer/Footer";
-import Hero from "../components/Home/Hero";
-import About from "../components/Home/About";
-import Experience from "../components/Home/Experience";
-import Timeline from "../components/Home/Timeline";
-import Skills from "../components/Home/Skills";
-import Projects from "../components/Home/Projects";
-import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/footer";
+import Hero from "../components/Home/hero";
+import About from "../components/Home/about";
+import Experience from "../components/Home/experience";
+import Timeline from "../components/Home/timeline";
+import Skills from "../components/Home/skills";
+import Projects from "../components/Home/projects";
+import Navbar from "../components/nav";
 
 const Home = () => {
   return (
@@ -23,4 +23,3 @@ const Home = () => {
 };
 
 export default Home;
-

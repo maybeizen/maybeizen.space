@@ -47,10 +47,10 @@ export const timelineEvents: TimelineEvent[] = [
     year: "2024",
     title: "Type Safety & New Languages",
     description:
-      "Learned Typescript, Python, and Lua. Embraced typed patterns and started thinking like a systems architect.",
+      "Learned TypeScript, Python, and Lua. Embraced typed patterns and started thinking like a systems architect.",
     icon: "fa-solid fa-shield-halved",
     details:
-      "As my projects grew in complexity, I needed more structure. Typescript became essential for maintaining code quality and catching errors early. I also expanded with Python for data processing and Lua for game development experiments.",
+      "As my projects grew in complexity, I needed more structure. TypeScript became essential for maintaining code quality and catching errors early. I also expanded with Python for data processing and Lua for game development experiments.",
   },
   {
     year: "Early 2025",
@@ -69,6 +69,15 @@ export const timelineEvents: TimelineEvent[] = [
     icon: "fa-solid fa-microchip",
     details:
       "My current focus is on lower-level programming to better understand what happens beneath the abstractions. Learning Rust has been particularly eye-opening for concepts like ownership and memory safety without garbage collection.",
+  },
+  {
+    year: "Late 2025-Present",
+    title: "Cybersecurity Exploration",
+    description:
+      "Diving into cybersecurity, ethical hacking, and digital defense to understand security from the inside out.",
+    icon: "fa-solid fa-user-secret",
+    details:
+      "My interest in cybersecurity started as I became more aware of the importance of securing systems and data. I began exploring fundamental concepts like network security, ethical hacking, and penetration testing. This has shown me the value of thinking like an attacker in order to be a better defender.",
   },
   // {
   //   year: null,

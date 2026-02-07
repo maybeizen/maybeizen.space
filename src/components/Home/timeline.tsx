@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { timelineEvents } from "../../data/timeline";
-import ButtonLink from "../ui/ButtonLink";
+import ButtonLink from "../ui/link-button";
 
 const Timeline = () => {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
