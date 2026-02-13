@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
-import { mainProjects, secondaryProjects, Project } from "../../data/projects";
+import { mainProjects, secondaryProjects, orvexProjects, Project } from "../../data/projects";
 import ProjectGrid from "./project-grid";
+import OrvexCard from "./orvex-card";
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
   const [filteredMain, setFilteredMain] = useState<Project[]>(mainProjects);
   const [filteredSecondary, setFilteredSecondary] =
     useState<Project[]>(secondaryProjects);
+  const [filteredOrvex, setFilteredOrvex] =
+    useState<Project[]>(orvexProjects);
 
   useEffect(() => {
     setFilteredMain(mainProjects);
     setFilteredSecondary(secondaryProjects);
+    setFilteredOrvex(orvexProjects);
   }, []);
 
   return (
@@ -23,6 +27,12 @@ const Projects = () => {
         <div>
           <ProjectGrid projects={filteredMain} />
         </div>
+
+        {filteredOrvex.length > 0 && (
+          <div className="mt-12">
+            <OrvexCard projects={filteredOrvex} />
+          </div>
+        )}
 
         {filteredSecondary.length > 0 && (
           <>

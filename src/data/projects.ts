@@ -20,15 +20,6 @@ export const mainProjects: Project[] = [
     archived: false,
   },
   {
-    name: "Fluxo",
-    description:
-      "A modern, open-source billing panel targeted at hosting providers.",
-    technologies: ["React", "Tailwind CSS", "TypeScript", "PostgreSQL"],
-    category: "Backend",
-    archived: false,
-    githubLink: "https://github.com/maybeizen/fluxo",
-  },
-  {
     name: "EasyTPA",
     description: "Simple, powerful teleport requests for Minecraft servers",
     technologies: ["Java", "Fabric", "Gradle", "PaperMC"],
@@ -92,5 +83,26 @@ export const secondaryProjects: Project[] = [
     githubLink: "https://github.com/maybeizen/pterolink",
     category: "Backend",
     archived: true,
+  },
+];
+
+export const orvexProjects: Project[] = [
+  {
+    name: "Orvex Monitor",
+    description:
+      "A modern uptime monitoring SaaS platform built with SvelteKit, featuring real-time status tracking, incident management, and comprehensive monitoring capabilities for your services.",
+    technologies: ["SvelteKit", "TypeScript", "GoLang", "PostgreSQL"],
+    category: "Backend",
+    archived: false,
+    githubLink: "https://github.com/maybeizen/orvex-monitor",
+  },
+  {
+    name: "Fluxo",
+    description:
+      "An open-source and completely free billing panel designed specifically for hosting providers, built with Next.js. Streamline invoicing, client management, and service provisioning.",
+    technologies: ["Next.js", "TypeScript"],
+    category: "Backend",
+    archived: false,
+    githubLink: "https://github.com/maybeizen/fluxo",
   },
 ];
