@@ -1,129 +1,107 @@
 import { Project } from "../../data/projects";
-import { ButtonLink } from "../ui";
 
 interface OrvexCardProps {
   projects: Project[];
 }
 
-const OrvexCard = ({ projects }: OrvexCardProps) => {
-  const getProjectTheme = (projectName: string) => {
-    if (projectName === "Orvex Monitor") {
-      return {
-        gradient: "from-blue-600/35 via-blue-500/30 to-blue-700/35",
-        border: "border-blue-500/50",
-        hoverShadow: "hover:shadow-blue-500/25",
-        hoverText: "group-hover:text-blue-200",
-        titleColor: "text-blue-50",
-        descriptionColor: "text-blue-100/85",
-        overlay: "to-blue-900/15",
-        techBg: "bg-blue-900/50",
-        techBorder: "border-blue-400/40",
-        techText: "text-blue-50",
-        buttonBg: "bg-blue-900/50",
-        buttonBorder: "border-blue-400/40",
-        buttonText: "text-blue-100",
-        buttonHover: "hover:bg-blue-800/60 hover:border-blue-300/50",
-      };
-    } else if (projectName === "Fluxo") {
-      return {
-        gradient: "from-black/60 via-yellow-500/25 to-black/70",
-        border: "border-yellow-500/50",
-        hoverShadow: "hover:shadow-yellow-500/25",
-        hoverText: "group-hover:text-yellow-200",
-        titleColor: "text-yellow-50",
-        descriptionColor: "text-yellow-100/85",
-        overlay: "to-black/20",
-        techBg: "bg-black/60",
-        techBorder: "border-yellow-400/40",
-        techText: "text-yellow-50",
-        buttonBg: "bg-black/60",
-        buttonBorder: "border-yellow-400/40",
-        buttonText: "text-yellow-100",
-        buttonHover: "hover:bg-black/70 hover:border-yellow-300/50",
-      };
-    }
-    return null;
-  };
+const ACCENT = {
+  NuboDB: {
+    border: "border-l-blue-400 hover:border-l-blue-400",
+    text: "text-blue-400",
+  },
+  Fluxo: {
+    border: "border-l-[#ffd952] hover:border-l-[#ffd952]",
+    text: "text-[#ffd952]",
+  },
+} as const;
 
+const OrvexCard = ({ projects }: OrvexCardProps) => {
   return (
-    <div className="bg-[#1a1a1a] border border-[#1a1a1a] p-5 rounded-lg hover:border-blue-400/30 transition-colors">
-      <div className="mb-4 pb-3 border-b border-[#0a0a0a]">
-        <h3 className="text-lg font-semibold mb-0.5 text-[#e5e5e5]">Orvex</h3>
-        <p className="text-[#808080] text-xs">
-          A collection of projects under the Orvex brand
-        </p>
+    <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 className="text-xl font-semibold text-white">Orvex</h3>
+          <p className="mt-0.5 text-sm text-neutral-400">
+            Projects under the Orvex brand
+          </p>
+        </div>
+        <a
+          href="https://orvex.cc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 transition-colors hover:text-blue-400"
+        >
+          orvex.cc
+          <i className="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => {
-          const links = [];
-          if (project.liveLink)
-            links.push({
-              type: "live",
-              url: project.liveLink,
-              label: "Visit Site",
-            });
-          if (project.githubLink)
-            links.push({
-              type: "github",
-              url: project.githubLink,
-              label: "GitHub",
-            });
+          const accent = ACCENT[project.name as keyof typeof ACCENT];
+          if (!accent) return null;
 
-          const theme = getProjectTheme(project.name);
-          if (!theme) return null;
-          
+          const links = [
+            ...(project.liveLink
+              ? [{ url: project.liveLink, label: "Visit" }]
+              : []),
+            ...(project.githubLink
+              ? [{ url: project.githubLink, label: "GitHub" }]
+              : []),
+          ];
+
           return (
             <div
               key={project.name}
-              className={`relative bg-gradient-to-br ${theme.gradient} border-2 ${theme.border} rounded-xl p-5 hover:border-opacity-70 hover:shadow-xl ${theme.hoverShadow} transition-all duration-300 group overflow-hidden h-full flex flex-col`}
+              className={`group rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 transition-all hover:border-neutral-700 ${accent.border} border-l-4`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-transparent ${theme.overlay} pointer-events-none`}></div>
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-3">
-                  <h4 className={`text-lg font-bold ${theme.titleColor} ${theme.hoverText} transition-colors`}>
-                    {project.name}
-                  </h4>
-                </div>
-
-                <p className={`text-sm mb-4 leading-relaxed grow ${theme.descriptionColor}`}>
-                  {project.description}
-                </p>
-
-                {project.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className={`px-2.5 py-1 backdrop-blur-sm border rounded-md text-xs font-medium ${theme.techBg} ${theme.techBorder} ${theme.techText} shadow-sm`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                {links.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {links.map((link, j) => (
-                      <ButtonLink
-                        key={j}
-                        variant="default"
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-md border backdrop-blur-sm transition-all ${theme.buttonBg} ${theme.buttonBorder} ${theme.buttonText} ${theme.buttonHover}`}
-                      >
-                        {link.type === "github" && (
-                          <i className="fa-brands fa-github"></i>
-                        )}
-                        {link.label}
-                        <i className="fa-solid fa-external-link-alt text-[10px]"></i>
-                      </ButtonLink>
-                    ))}
-                  </div>
+              <div className="mb-3 flex items-start justify-between gap-2">
+                <h4 className={`font-semibold ${accent.text}`}>
+                  {project.name}
+                </h4>
+                {project.archived && project.name !== "NuboDB" && (
+                  <span className="shrink-0 rounded px-2 py-0.5 text-[10px] font-medium text-neutral-500">
+                    Archived
+                  </span>
                 )}
               </div>
+
+              <p className="mb-4 text-sm leading-relaxed text-neutral-400">
+                {project.description}
+              </p>
+
+              {project.technologies.length > 0 && (
+                <div className="mb-4 flex flex-wrap gap-1.5">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md bg-neutral-800 px-2 py-0.5 text-xs text-neutral-500"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {links.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {links.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-800 px-3 py-1.5 text-xs font-medium text-neutral-300 transition-colors hover:bg-neutral-700 hover:text-white"
+                    >
+                      {link.label === "GitHub" && (
+                        <i className="fa-brands fa-github"></i>
+                      )}
+                      {link.label}
+                      <i className="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-60"></i>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           );
         })}

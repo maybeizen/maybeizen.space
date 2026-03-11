@@ -60,14 +60,6 @@ export const secondaryProjects: Project[] = [
     archived: true,
   },
   {
-    name: "NuboDB",
-    description: "A straightfoward document-based local storage solution.",
-    technologies: ["TypeScript", "Node.js", "BSON"],
-    githubLink: "https://github.com/maybeizen/nubodb",
-    category: "Backend",
-    archived: true,
-  },
-  {
     name: "NetherCore",
     description: "Custom Discord bot for Nether Host with advanced features.",
     technologies: ["TypeScript", "Node.js", "Discord.js", "MongoDB"],
@@ -88,13 +80,13 @@ export const secondaryProjects: Project[] = [
 
 export const orvexProjects: Project[] = [
   {
-    name: "Orvex Monitor",
+    name: "NuboDB",
     description:
-      "A modern uptime monitoring SaaS platform built with SvelteKit, featuring real-time status tracking, incident management, and comprehensive monitoring capabilities for your services.",
-    technologies: ["SvelteKit", "TypeScript", "GoLang", "PostgreSQL"],
+      "A fast, feature-rich NoSQL document database for Node.js. TypeScript-first with optional native Go acceleration.",
+    technologies: ["TypeScript", "Node.js", "BSON"],
+    githubLink: "https://github.com/orvex-studio/nubodb",
     category: "Backend",
-    archived: false,
-    githubLink: "https://github.com/maybeizen/orvex-monitor",
+    archived: true,
   },
   {
     name: "Fluxo",
