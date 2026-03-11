@@ -1,7 +1,10 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
 import { Link, LinkProps } from "react-router-dom";
 
-interface ButtonLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
+interface ButtonLinkProps extends Omit<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  "href"
+> {
   variant?: "default" | "secondary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg";
   children: ReactNode;
@@ -38,10 +41,13 @@ const ButtonLink = ({
 
   const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  // Use React Router Link if 'to' prop is provided, otherwise use anchor tag
   if (to) {
     return (
-      <Link className={combinedClassName} to={to} {...(props as Omit<LinkProps, "to">)}>
+      <Link
+        className={combinedClassName}
+        to={to}
+        {...(props as Omit<LinkProps, "to">)}
+      >
         {children}
       </Link>
     );

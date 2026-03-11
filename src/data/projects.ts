@@ -20,15 +20,6 @@ export const mainProjects: Project[] = [
     archived: false,
   },
   {
-    name: "Fluxo",
-    description:
-      "A modern, open-source billing panel targeted at hosting providers.",
-    technologies: ["React", "Tailwind CSS", "TypeScript", "PostgreSQL"],
-    category: "Backend",
-    archived: false,
-    githubLink: "https://github.com/maybeizen/fluxo",
-  },
-  {
     name: "EasyTPA",
     description: "Simple, powerful teleport requests for Minecraft servers",
     technologies: ["Java", "Fabric", "Gradle", "PaperMC"],
@@ -69,14 +60,6 @@ export const secondaryProjects: Project[] = [
     archived: true,
   },
   {
-    name: "NuboDB",
-    description: "A straightfoward document-based local storage solution.",
-    technologies: ["TypeScript", "Node.js", "BSON"],
-    githubLink: "https://github.com/maybeizen/nubodb",
-    category: "Backend",
-    archived: true,
-  },
-  {
     name: "NetherCore",
     description: "Custom Discord bot for Nether Host with advanced features.",
     technologies: ["TypeScript", "Node.js", "Discord.js", "MongoDB"],
@@ -92,5 +75,26 @@ export const secondaryProjects: Project[] = [
     githubLink: "https://github.com/maybeizen/pterolink",
     category: "Backend",
     archived: true,
+  },
+];
+
+export const orvexProjects: Project[] = [
+  {
+    name: "NuboDB",
+    description:
+      "A fast, feature-rich NoSQL document database for Node.js. TypeScript-first with optional native Go acceleration.",
+    technologies: ["TypeScript", "Node.js", "BSON"],
+    githubLink: "https://github.com/orvex-studio/nubodb",
+    category: "Backend",
+    archived: true,
+  },
+  {
+    name: "Fluxo",
+    description:
+      "An open-source and completely free billing panel designed specifically for hosting providers, built with Next.js. Streamline invoicing, client management, and service provisioning.",
+    technologies: ["Next.js", "TypeScript"],
+    category: "Backend",
+    archived: false,
+    githubLink: "https://github.com/maybeizen/fluxo",
   },
 ];

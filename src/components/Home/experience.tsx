@@ -70,6 +70,12 @@ const Experience = () => {
                   </div>
                   <h4 className="text-lg font-semibold">{card.title}</h4>
                 </div>
+                {card.achievement && (
+                  <div className="mb-4 px-4 py-3 rounded-lg bg-amber-500/15 border border-amber-400/40 text-amber-300 font-semibold text-sm flex items-center gap-2">
+                    <i className="fa-solid fa-trophy text-amber-400"></i>
+                    <span>{card.achievement}</span>
+                  </div>
+                )}
                 <p className="text-[#a0a0a0] text-sm mb-4 leading-relaxed">
                   {card.description}
                 </p>
