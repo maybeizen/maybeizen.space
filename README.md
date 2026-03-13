@@ -5,5 +5,5 @@ Welcome to the repository for my personal website, [maybeizen.space](https://may
 ## Stack
 
 - React: Frontend styling, dynamic and interactive user interface,
-- Tailwind CSS: Rapid, flexible styling.
+- TailwindCSS: Rapid, flexible styling.
 - Node.js: Backend integration and runtime.
