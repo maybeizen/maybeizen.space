@@ -7,23 +7,31 @@ export interface AboutCard {
 
 export const aboutCards: AboutCard[] = [
   {
-    icon: "fa-solid fa-code",
-    title: "Full-Stack",
+    icon: "fa-solid fa-drum",
+    title: "Drumming",
     description:
-      "Building full-stack systems and APIs with scalable architecture.",
-    tags: ["Express.js", "Next.js", "PostgreSQL"],
+      "Percussion is where I feel most alive. Working on my chops and learning new patterns every day.",
+    tags: ["Fills", "Grooves", "Double Bass"],
+  },
+  {
+    icon: "fa-solid fa-headphones",
+    title: "Music Taste",
+    description:
+      "Dad rock, alt metal, and anything with heavy drums. Always discovering new artists.",
+    tags: ["Linkin Park", "Deftones", "irvi", "PVRIS"],
+  },
+  {
+    icon: "fa-solid fa-users",
+    title: "Band Dream",
+    description:
+      "My biggest goal is to play in a band. Nothing beats the feeling of making music with other people.",
+    tags: ["Drummer", "Live Shows", "Jamming"],
   },
   {
     icon: "fa-solid fa-tv",
     title: "Anime",
     description: "In love with stories like Darling in the FranXX.",
     tags: ["DarliFra", "Bocchi the Rock!", "Tsuki ga kirei"],
-  },
-  {
-    icon: "fa-solid fa-database",
-    title: "Systems",
-    description: "Exploring database structures, protection, and replication.",
-    tags: ["MySQL", "MongoDB", "Docker"],
   },
   {
     icon: "fa-solid fa-gamepad",
@@ -33,17 +41,10 @@ export const aboutCards: AboutCard[] = [
     tags: ["Satisfactory", "Minecraft", "The Finals"],
   },
   {
-    icon: "fa-solid fa-music",
-    title: "Music",
+    icon: "fa-solid fa-code",
+    title: "Also a Coder",
     description:
-      "Drummer and dad rock enthusiast. Always listening to music.",
-    tags: ["Linkin Park", "Deftones", "irvi", "PVRIS"],
-  },
-  {
-    icon: "fa-solid fa-graduation-cap",
-    title: "Always Learning",
-    description:
-      "Exploring new technologies and software every day.",
-    tags: ["GoLang", "C", "Rust"],
+      "Full-stack developer on the side. I build things with TypeScript, React, and Node.js.",
+    tags: ["TypeScript", "React", "Node.js"],
   },
 ];

@@ -8,29 +8,28 @@ const Footer = () => {
               maybeizen
             </h2>
             <p className="text-sm text-[#a0a0a0] leading-relaxed mb-6">
-              Full-stack developer passionate about building robust, scalable
-              systems and APIs.
+              Drummer and music lover chasing the dream of playing in a band.
             </p>
             <div className="flex space-x-3">
               <a
                 href="https://github.com/maybeizen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-blue-400 transition-colors rounded-lg hover:bg-[#1a1a1a]"
+                className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-red-500 transition-colors rounded-lg hover:bg-[#1a1a1a]"
                 aria-label="GitHub"
               >
                 <i className="fa-brands fa-github"></i>
               </a>
               <a
                 href="#"
-                className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-blue-400 transition-colors rounded-lg hover:bg-[#1a1a1a]"
+                className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-red-500 transition-colors rounded-lg hover:bg-[#1a1a1a]"
                 aria-label="Twitter"
               >
                 <i className="fa-brands fa-twitter"></i>
               </a>
               <a
                 href="mailto:me@maybeizen.space"
-                className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-blue-400 transition-colors rounded-lg hover:bg-[#1a1a1a]"
+                className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-red-500 transition-colors rounded-lg hover:bg-[#1a1a1a]"
                 aria-label="Email"
               >
                 <i className="fa-solid fa-envelope"></i>
@@ -43,11 +42,11 @@ const Footer = () => {
               Navigation
             </h3>
             <ul className="space-y-2 text-sm">
-              {["Home", "Skills", "Projects"].map((item) => (
+              {["Home", "About", "Songs"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-[#a0a0a0] hover:text-blue-400 transition-colors"
+                    className="text-[#a0a0a0] hover:text-red-500 transition-colors"
                   >
                     {item}
                   </a>
@@ -65,7 +64,7 @@ const Footer = () => {
             </p>
             <a
               href="mailto:me@maybeizen.space"
-              className="inline-block text-sm text-blue-400 hover:text-blue-300 transition-colors"
+              className="inline-block text-sm text-red-500 hover:text-red-400 transition-colors"
             >
               me@maybeizen.space
             </a>

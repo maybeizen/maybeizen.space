@@ -15,15 +15,15 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0a0a0a] disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-[#0a0a0a] disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
-    default: "bg-blue-500 text-white hover:bg-blue-400 active:bg-blue-600",
+    default: "bg-red-600 text-white hover:bg-red-500 active:bg-red-700",
     secondary:
-      "bg-[#1a1a1a] text-[#e5e5e5] border border-[#1a1a1a] hover:bg-[#1a1a1a] hover:border-blue-400 hover:text-blue-400",
+      "bg-[#1a1a1a] text-[#e5e5e5] border border-[#1a1a1a] hover:bg-[#1a1a1a] hover:border-red-500 hover:text-red-500",
     ghost: "text-[#a0a0a0] hover:text-[#e5e5e5] hover:bg-[#1a1a1a]",
     outline:
-      "border border-[#1a1a1a] text-[#e5e5e5] hover:border-blue-400 hover:text-blue-400",
+      "border border-[#1a1a1a] text-[#e5e5e5] hover:border-red-500 hover:text-red-500",
   };
 
   const sizes = {

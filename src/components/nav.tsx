@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a
           href="#home"
-          className="text-lg font-semibold text-[#e5e5e5] hover:text-blue-400 transition-colors"
+          className="text-lg font-semibold text-[#e5e5e5] hover:text-red-500 transition-colors"
         >
           maybeizen
         </a>
@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-blue-400 transition-colors rounded-lg hover:bg-[#1a1a1a]"
+            className="w-9 h-9 flex items-center justify-center text-[#a0a0a0] hover:text-red-500 transition-colors rounded-lg hover:bg-[#1a1a1a]"
             aria-label="Toggle menu"
           >
             {isOpen ? "✕" : "☰"}
@@ -31,7 +31,7 @@ const Navbar = () => {
               href={item.href}
               target={item.external ? "_blank" : "_self"}
               rel={item.external ? "noopener noreferrer" : ""}
-              className="flex items-center gap-2 text-sm text-[#a0a0a0] hover:text-blue-400 transition-colors font-medium"
+              className="flex items-center gap-2 text-sm text-[#a0a0a0] hover:text-red-500 transition-colors font-medium"
             >
               {item.icon && <i className={item.icon}></i>}
               <span>{item.name}</span>
@@ -48,7 +48,7 @@ const Navbar = () => {
               href={item.href}
               target={item.external ? "_blank" : "_self"}
               rel={item.external ? "noopener noreferrer" : ""}
-              className="block py-3 px-6 text-sm text-[#a0a0a0] hover:text-blue-400 hover:bg-[#1a1a1a] transition-colors font-medium"
+              className="block py-3 px-6 text-sm text-[#a0a0a0] hover:text-red-500 hover:bg-[#1a1a1a] transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
               {item.name}

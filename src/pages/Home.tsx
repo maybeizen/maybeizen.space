@@ -1,10 +1,7 @@
 import Footer from "../components/footer";
 import Hero from "../components/Home/hero";
 import About from "../components/Home/about";
-import Experience from "../components/Home/experience";
-import Timeline from "../components/Home/timeline";
-import Skills from "../components/Home/skills";
-import Projects from "../components/Home/projects";
+import Songs from "../components/Home/songs";
 import Navbar from "../components/nav";
 
 const Home = () => {
@@ -13,10 +10,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <About />
-      <Experience />
-      <Timeline />
-      <Skills />
-      <Projects />
+      <Songs />
       <Footer />
     </div>
   );
